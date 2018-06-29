@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Gnv-K5-4Qq" userLabel="Head View" customClass="QTSelectTime">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="起始" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1iq-nF-7w3">
+                    <rect key="frame" x="5" y="13" width="26" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mT-w8-Z3a">
+                    <rect key="frame" x="36" y="6" width="113" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Kc3-98-guM"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="2" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="Button" image="rili_03">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9le-F0-hmw">
+                    <rect key="frame" x="171" y="6" width="113" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="XJc-ve-sAV"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="2" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="Button" image="rili_03">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="结束" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Utz-2c-vLJ">
+                    <rect key="frame" x="289" y="13" width="26" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jOO-jj-GDM">
+                    <rect key="frame" x="154" y="20" width="12" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="12" id="79U-Xa-IX3"/>
+                        <constraint firstAttribute="height" constant="1" id="IeH-kP-PJ9"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Utz-2c-vLJ" firstAttribute="trailing" secondItem="Gnv-K5-4Qq" secondAttribute="trailingMargin" id="4qH-dl-kGn"/>
+                <constraint firstItem="3mT-w8-Z3a" firstAttribute="centerY" secondItem="jOO-jj-GDM" secondAttribute="centerY" id="JYM-6b-0nn"/>
+                <constraint firstItem="1iq-nF-7w3" firstAttribute="leading" secondItem="Gnv-K5-4Qq" secondAttribute="leading" constant="5" id="Las-NL-5jc"/>
+                <constraint firstItem="3mT-w8-Z3a" firstAttribute="baseline" secondItem="1iq-nF-7w3" secondAttribute="baseline" id="Me1-lU-ImV"/>
+                <constraint firstAttribute="trailing" secondItem="Utz-2c-vLJ" secondAttribute="trailing" constant="5" id="P9t-sJ-QTq"/>
+                <constraint firstItem="Utz-2c-vLJ" firstAttribute="leading" secondItem="9le-F0-hmw" secondAttribute="trailing" constant="5" id="WXw-ZX-gYe"/>
+                <constraint firstItem="jOO-jj-GDM" firstAttribute="leading" secondItem="3mT-w8-Z3a" secondAttribute="trailing" constant="5" id="YOg-5Z-0ZL"/>
+                <constraint firstItem="3mT-w8-Z3a" firstAttribute="baseline" secondItem="9le-F0-hmw" secondAttribute="baseline" id="eYp-Vm-YFd"/>
+                <constraint firstItem="3mT-w8-Z3a" firstAttribute="leading" secondItem="1iq-nF-7w3" secondAttribute="trailing" constant="5" id="g2A-RG-ffP"/>
+                <constraint firstItem="jOO-jj-GDM" firstAttribute="leading" secondItem="3mT-w8-Z3a" secondAttribute="trailing" constant="8" symbolic="YES" id="jyB-LD-wN0"/>
+                <constraint firstItem="Utz-2c-vLJ" firstAttribute="baseline" secondItem="9le-F0-hmw" secondAttribute="baseline" id="kbo-g8-rGR"/>
+                <constraint firstAttribute="centerX" secondItem="jOO-jj-GDM" secondAttribute="centerX" id="m1P-Vj-LFB"/>
+                <constraint firstItem="3mT-w8-Z3a" firstAttribute="bottom" secondItem="Gnv-K5-4Qq" secondAttribute="bottomMargin" id="uEy-bj-qih"/>
+                <constraint firstItem="9le-F0-hmw" firstAttribute="leading" secondItem="jOO-jj-GDM" secondAttribute="trailing" constant="5" id="wYp-G5-Xfp"/>
+                <constraint firstItem="Utz-2c-vLJ" firstAttribute="leading" secondItem="9le-F0-hmw" secondAttribute="trailing" id="x1m-Ts-fJz"/>
+                <constraint firstItem="1iq-nF-7w3" firstAttribute="leading" secondItem="Gnv-K5-4Qq" secondAttribute="leadingMargin" id="ybK-w0-C68"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="ybK-w0-C68"/>
+                    <exclude reference="jyB-LD-wN0"/>
+                    <exclude reference="4qH-dl-kGn"/>
+                    <exclude reference="x1m-Ts-fJz"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="btnEnd" destination="9le-F0-hmw" id="afD-Po-svT"/>
+                <outlet property="btnStart" destination="3mT-w8-Z3a" id="5AX-qd-IBL"/>
+            </connections>
+            <point key="canvasLocation" x="-34" y="296"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="rili_03" width="19" height="16"/>
+    </resources>
+</document>

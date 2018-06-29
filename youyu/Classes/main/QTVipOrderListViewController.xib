@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QTVipOrderListViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewHead" destination="ce8-5J-WXH" id="lFQ-Iv-Oxx"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+        </view>
+        <view contentMode="scaleToFill" id="ce8-5J-WXH">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投资总额" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Vu-Et-2kr">
+                    <rect key="frame" x="0.0" y="0.0" width="64" height="44"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="期限" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBX-Ym-uFT">
+                    <rect key="frame" x="64" y="0.0" width="64" height="44"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="预计年化" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUX-pj-1Go">
+                    <rect key="frame" x="128" y="0.0" width="64" height="44"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="预约状态" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zlp-Js-c0w">
+                    <rect key="frame" x="192" y="0.0" width="64" height="44"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="操作" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLr-JV-Htc">
+                    <rect key="frame" x="256" y="0.0" width="64" height="44"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="UBX-Ym-uFT" secondAttribute="bottom" id="3HA-W4-fd5"/>
+                <constraint firstAttribute="trailing" secondItem="dLr-JV-Htc" secondAttribute="trailing" id="4gF-22-sd6"/>
+                <constraint firstItem="UBX-Ym-uFT" firstAttribute="width" secondItem="7Vu-Et-2kr" secondAttribute="width" id="9Qw-K4-2d0"/>
+                <constraint firstItem="dLr-JV-Htc" firstAttribute="leading" secondItem="Zlp-Js-c0w" secondAttribute="trailing" id="9p7-47-mRT"/>
+                <constraint firstAttribute="bottom" secondItem="dLr-JV-Htc" secondAttribute="bottom" id="Gdl-qf-9gq"/>
+                <constraint firstAttribute="bottom" secondItem="7Vu-Et-2kr" secondAttribute="bottom" id="GuY-Qr-qaN"/>
+                <constraint firstItem="7Vu-Et-2kr" firstAttribute="top" secondItem="ce8-5J-WXH" secondAttribute="top" id="Hbw-aq-cC1"/>
+                <constraint firstItem="UBX-Ym-uFT" firstAttribute="leading" secondItem="7Vu-Et-2kr" secondAttribute="trailing" id="L5s-p2-CEY"/>
+                <constraint firstAttribute="bottom" secondItem="Zlp-Js-c0w" secondAttribute="bottom" id="Qa6-nL-0F1"/>
+                <constraint firstItem="Zlp-Js-c0w" firstAttribute="width" secondItem="7Vu-Et-2kr" secondAttribute="width" id="RSI-r8-TSA"/>
+                <constraint firstItem="GUX-pj-1Go" firstAttribute="top" secondItem="ce8-5J-WXH" secondAttribute="top" id="VJC-yX-41f"/>
+                <constraint firstItem="Zlp-Js-c0w" firstAttribute="leading" secondItem="GUX-pj-1Go" secondAttribute="trailing" id="X95-06-TmV"/>
+                <constraint firstItem="dLr-JV-Htc" firstAttribute="width" secondItem="7Vu-Et-2kr" secondAttribute="width" id="aVc-A8-fUA"/>
+                <constraint firstItem="Zlp-Js-c0w" firstAttribute="top" secondItem="ce8-5J-WXH" secondAttribute="top" id="du0-57-XK7"/>
+                <constraint firstItem="GUX-pj-1Go" firstAttribute="leading" secondItem="UBX-Ym-uFT" secondAttribute="trailing" id="h4h-Mi-OTr"/>
+                <constraint firstAttribute="bottom" secondItem="GUX-pj-1Go" secondAttribute="bottom" id="hgT-Ab-na2"/>
+                <constraint firstItem="7Vu-Et-2kr" firstAttribute="leading" secondItem="ce8-5J-WXH" secondAttribute="leading" id="izk-3z-O0T"/>
+                <constraint firstItem="dLr-JV-Htc" firstAttribute="top" secondItem="ce8-5J-WXH" secondAttribute="top" id="m8m-ou-K9M"/>
+                <constraint firstItem="UBX-Ym-uFT" firstAttribute="top" secondItem="ce8-5J-WXH" secondAttribute="top" id="tcn-bi-3BC"/>
+                <constraint firstItem="GUX-pj-1Go" firstAttribute="width" secondItem="7Vu-Et-2kr" secondAttribute="width" id="uFs-Ca-KGe"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="179" y="-183"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HRRegisterViewController">
+            <connections>
+                <outlet property="headImage" destination="6CW-ve-anG" id="NxX-sE-86M"/>
+                <outlet property="investUserTotalLabel" destination="TGO-o5-tHP" id="p4X-b9-8J9"/>
+                <outlet property="protoclButton" destination="AHe-eb-6i4" id="FYq-TD-EEN"/>
+                <outlet property="regButton" destination="JHK-6L-jAL" id="BhH-91-mrw"/>
+                <outlet property="regView" destination="hsT-5t-L5j" id="WpD-vw-3wh"/>
+                <outlet property="registerLoginBt" destination="JHK-6L-jAL" id="Vyh-af-Ivs"/>
+                <outlet property="scrollview" destination="L6U-IR-ZNS" id="HTT-9e-vSp"/>
+                <outlet property="tintLabel" destination="vak-6n-PEy" id="fPa-z5-gmq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </view>
+        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head-logo" id="6CW-ve-anG">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="95"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <point key="canvasLocation" x="-30" y="-373"/>
+        </imageView>
+        <view contentMode="scaleToFill" id="hsT-5t-L5j">
+            <rect key="frame" x="0.0" y="0.0" width="416" height="15"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="有账号？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3uu-FF-T8b">
+                    <rect key="frame" x="181" y="0.0" width="54" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHK-6L-jAL">
+                    <rect key="frame" x="229" y="5" width="43" height="6"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="请登录">
+                        <color key="titleColor" red="0.95686274509803915" green="0.22745098039215686" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="JHK-6L-jAL" firstAttribute="leading" secondItem="3uu-FF-T8b" secondAttribute="trailing" constant="-6" id="ACH-dN-SHF"/>
+                <constraint firstItem="3uu-FF-T8b" firstAttribute="centerY" secondItem="hsT-5t-L5j" secondAttribute="centerY" id="rK2-hP-IEf"/>
+                <constraint firstItem="3uu-FF-T8b" firstAttribute="centerX" secondItem="hsT-5t-L5j" secondAttribute="centerX" id="rgc-a1-JVp"/>
+                <constraint firstItem="JHK-6L-jAL" firstAttribute="top" secondItem="hsT-5t-L5j" secondAttribute="top" constant="5" id="yFW-UQ-MuU"/>
+                <constraint firstItem="JHK-6L-jAL" firstAttribute="centerY" secondItem="hsT-5t-L5j" secondAttribute="centerY" id="zvM-XG-m0H"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-125" y="552"/>
+        </view>
+        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*登录密码为6-18位包含大小写字母、数字的任意两种" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vak-6n-PEy">
+            <rect key="frame" x="0.0" y="0.0" width="283" height="21"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+            <nil key="textColor"/>
+            <nil key="highlightedColor"/>
+            <point key="canvasLocation" x="-42.5" y="752.5"/>
+        </label>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="AHe-eb-6i4">
+            <rect key="frame" x="0.0" y="0.0" width="304" height="13"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" image="icon_login_select">
+                <attributedString key="attributedTitle">
+                    <fragment content="我已同意《湖商贷注册服务协议》">
+                        <attributes>
+                            <font key="NSFont" size="13" name="STFangsong"/>
+                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                        </attributes>
+                    </fragment>
+                </attributedString>
+            </state>
+            <state key="selected">
+                <attributedString key="attributedTitle"/>
+            </state>
+            <point key="canvasLocation" x="-78" y="897"/>
+        </button>
+        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="L6U-IR-ZNS">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <point key="canvasLocation" x="-190" y="-816"/>
+        </scrollView>
+        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="现在已有40926人与您一起放心理财" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TGO-o5-tHP">
+            <rect key="frame" x="0.0" y="0.0" width="504" height="17"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+            <nil key="textColor"/>
+            <nil key="highlightedColor"/>
+            <point key="canvasLocation" x="804" y="-398.5"/>
+        </label>
+    </objects>
+    <resources>
+        <image name="head-logo" width="226" height="82"/>
+        <image name="icon_login_select" width="16" height="16"/>
+    </resources>
+</document>

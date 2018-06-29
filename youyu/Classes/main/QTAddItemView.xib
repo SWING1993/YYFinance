@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1BH-Ek-s5D" customClass="QTAddItemView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1QY-7h-CKF">
+                    <rect key="frame" x="40" y="10" width="240" height="60"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKo-3l-tXy">
+                    <rect key="frame" x="148" y="21" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="ai6-2m-ofm"/>
+                        <constraint firstAttribute="height" constant="24" id="hJz-jS-Ey9"/>
+                    </constraints>
+                    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="icon_add_circle"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加银行卡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8V-0G-s6Y">
+                    <rect key="frame" x="130" y="48" width="60" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="1QY-7h-CKF" firstAttribute="top" secondItem="1BH-Ek-s5D" secondAttribute="top" constant="10" id="0Ji-RD-385"/>
+                <constraint firstItem="cKo-3l-tXy" firstAttribute="centerX" secondItem="1BH-Ek-s5D" secondAttribute="centerX" id="SAm-Mv-ntD"/>
+                <constraint firstItem="cKo-3l-tXy" firstAttribute="top" secondItem="1BH-Ek-s5D" secondAttribute="top" constant="21" id="TPG-mP-hpy"/>
+                <constraint firstItem="Y8V-0G-s6Y" firstAttribute="top" secondItem="cKo-3l-tXy" secondAttribute="bottom" constant="3" id="ZTU-NC-oGf"/>
+                <constraint firstAttribute="bottom" secondItem="1QY-7h-CKF" secondAttribute="bottom" constant="10" id="iBe-Wm-EwW"/>
+                <constraint firstItem="Y8V-0G-s6Y" firstAttribute="centerX" secondItem="1BH-Ek-s5D" secondAttribute="centerX" id="iLz-Mz-DTR"/>
+                <constraint firstItem="1QY-7h-CKF" firstAttribute="leading" secondItem="1BH-Ek-s5D" secondAttribute="leading" constant="40" id="jru-uD-sba"/>
+                <constraint firstAttribute="trailing" secondItem="1QY-7h-CKF" secondAttribute="trailing" constant="40" id="pLi-VA-ATm"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="backView" destination="1QY-7h-CKF" id="zdZ-Dr-Wt7"/>
+                <outlet property="btn" destination="cKo-3l-tXy" id="a4Y-k2-zkk"/>
+                <outlet property="lbTitle" destination="Y8V-0G-s6Y" id="bRn-mm-Dt9"/>
+            </connections>
+            <point key="canvasLocation" x="-273" y="182"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_add_circle" width="36" height="36"/>
+    </resources>
+</document>

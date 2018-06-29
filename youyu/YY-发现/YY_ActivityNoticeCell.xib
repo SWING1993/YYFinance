@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="YY_ActivityNoticeCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="239.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n6l-C8-YD9">
+                        <rect key="frame" x="12" y="10" width="351" height="229.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-pwdbanner" translatesAutoresizingMaskIntoConstraints="NO" id="k4c-aC-9ZH">
+                                <rect key="frame" x="12" y="10" width="327" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="2Yc-Rl-ldB"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaO-FP-lBo">
+                                <rect key="frame" x="12" y="165" width="327" height="1.5"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="6bK-BM-KPD"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017-11-15 14:23:46" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tO-la-Ykt">
+                                <rect key="frame" x="12" y="199" width="327" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="互联网监管一周年,有余金服超行业九成平台" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6L-Eh-9Qk">
+                                <rect key="frame" x="12" y="166.5" width="327" height="32.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32.5" id="eKv-en-TdI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1tO-la-Ykt" firstAttribute="leading" secondItem="n6l-C8-YD9" secondAttribute="leading" constant="12" id="31b-TV-lLu"/>
+                            <constraint firstAttribute="trailing" secondItem="1tO-la-Ykt" secondAttribute="trailing" constant="12" id="5Mo-rg-yfF"/>
+                            <constraint firstAttribute="trailing" secondItem="U6L-Eh-9Qk" secondAttribute="trailing" constant="12" id="Idg-nh-hvy"/>
+                            <constraint firstAttribute="bottom" secondItem="1tO-la-Ykt" secondAttribute="bottom" id="JGE-Gi-bt1"/>
+                            <constraint firstItem="U6L-Eh-9Qk" firstAttribute="top" secondItem="eaO-FP-lBo" secondAttribute="bottom" id="JIJ-Jq-BwR"/>
+                            <constraint firstItem="eaO-FP-lBo" firstAttribute="top" secondItem="k4c-aC-9ZH" secondAttribute="bottom" constant="5" id="Ju2-fc-puB"/>
+                            <constraint firstAttribute="trailing" secondItem="k4c-aC-9ZH" secondAttribute="trailing" constant="12" id="Kfw-k7-T6s"/>
+                            <constraint firstItem="k4c-aC-9ZH" firstAttribute="top" secondItem="n6l-C8-YD9" secondAttribute="top" constant="10" id="MRc-IB-Vfv"/>
+                            <constraint firstItem="eaO-FP-lBo" firstAttribute="leading" secondItem="n6l-C8-YD9" secondAttribute="leading" constant="12" id="P4l-fk-Zdk"/>
+                            <constraint firstItem="U6L-Eh-9Qk" firstAttribute="leading" secondItem="n6l-C8-YD9" secondAttribute="leading" constant="12" id="YtW-F0-AWo"/>
+                            <constraint firstItem="k4c-aC-9ZH" firstAttribute="leading" secondItem="n6l-C8-YD9" secondAttribute="leading" constant="12" id="cSB-R4-XBi"/>
+                            <constraint firstAttribute="trailing" secondItem="eaO-FP-lBo" secondAttribute="trailing" constant="12" id="cep-qc-zTv"/>
+                            <constraint firstItem="1tO-la-Ykt" firstAttribute="top" secondItem="U6L-Eh-9Qk" secondAttribute="bottom" id="mDe-wk-cF3"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="n6l-C8-YD9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="BSr-BJ-Q9t"/>
+                    <constraint firstItem="n6l-C8-YD9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="ZIo-eX-3bg"/>
+                    <constraint firstAttribute="trailing" secondItem="n6l-C8-YD9" secondAttribute="trailing" constant="12" id="dXJ-wP-fGJ"/>
+                    <constraint firstAttribute="bottom" secondItem="n6l-C8-YD9" secondAttribute="bottom" id="gSE-sn-e3V"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="coverView" destination="n6l-C8-YD9" id="OFg-bB-eUT"/>
+                <outlet property="imView" destination="k4c-aC-9ZH" id="xpf-eJ-OIG"/>
+                <outlet property="timeLabel" destination="1tO-la-Ykt" id="i8a-AI-nuc"/>
+                <outlet property="titleLabel" destination="U6L-Eh-9Qk" id="b16-uz-5e9"/>
+            </connections>
+            <point key="canvasLocation" x="-156.5" y="27"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="img-pwdbanner" width="375" height="160"/>
+    </resources>
+</document>

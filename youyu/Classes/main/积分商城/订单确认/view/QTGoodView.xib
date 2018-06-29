@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="QTGoodView">
+            <rect key="frame" x="0.0" y="0.0" width="461" height="110"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gLG-zZ-5ty">
+                    <rect key="frame" x="8" y="0.0" width="445" height="3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="3" id="pWi-y5-UIq"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="quT-4g-tJY">
+                    <rect key="frame" x="16" y="10" width="90" height="90"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="90" id="OUV-l7-57O"/>
+                        <constraint firstAttribute="width" constant="90" id="SYy-eS-noP"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGp-3x-YO5">
+                    <rect key="frame" x="114" y="10" width="339" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awm-JS-OPO">
+                    <rect key="frame" x="114" y="83" width="35.5" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmm-rv-7CY">
+                    <rect key="frame" x="417.5" y="83" width="35.5" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="tGp-3x-YO5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="27r-fM-pAa"/>
+                <constraint firstAttribute="trailing" secondItem="gmm-rv-7CY" secondAttribute="trailing" constant="8" id="2X9-xO-x67"/>
+                <constraint firstAttribute="bottom" secondItem="awm-JS-OPO" secondAttribute="bottom" constant="10" id="EaG-0Y-aeV"/>
+                <constraint firstItem="awm-JS-OPO" firstAttribute="leading" secondItem="quT-4g-tJY" secondAttribute="trailing" constant="8" id="K4t-v5-siJ"/>
+                <constraint firstAttribute="trailing" secondItem="gLG-zZ-5ty" secondAttribute="trailing" constant="8" id="Q86-NP-gJw"/>
+                <constraint firstItem="gLG-zZ-5ty" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="ULH-sO-mwE"/>
+                <constraint firstItem="tGp-3x-YO5" firstAttribute="leading" secondItem="quT-4g-tJY" secondAttribute="trailing" constant="8" id="VPu-PO-avr"/>
+                <constraint firstAttribute="bottom" secondItem="gmm-rv-7CY" secondAttribute="bottom" constant="10" id="dCj-wI-Apz"/>
+                <constraint firstItem="quT-4g-tJY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="eU6-kB-RZc"/>
+                <constraint firstAttribute="trailing" secondItem="tGp-3x-YO5" secondAttribute="trailing" constant="8" id="lwP-W8-yS6"/>
+                <constraint firstItem="quT-4g-tJY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="r0a-58-mye"/>
+                <constraint firstItem="gLG-zZ-5ty" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vu6-NJ-XRM"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="image" destination="quT-4g-tJY" id="I0F-cH-NKV"/>
+                <outlet property="lbNum" destination="gmm-rv-7CY" id="xab-4s-0ji"/>
+                <outlet property="lbPoint" destination="awm-JS-OPO" id="n2V-YG-sRJ"/>
+                <outlet property="lbTitle" destination="tGp-3x-YO5" id="c3f-nA-JyW"/>
+                <outlet property="lineImage" destination="gLG-zZ-5ty" id="D53-TL-WFg"/>
+            </connections>
+            <point key="canvasLocation" x="413.5" y="219"/>
+        </view>
+    </objects>
+</document>

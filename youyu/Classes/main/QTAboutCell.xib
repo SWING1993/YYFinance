@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3ld-eT-Ljd" customClass="QTAboutCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3ld-eT-Ljd" id="Bk0-d1-KMd">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MZb-70-dD6">
+                        <rect key="frame" x="16" y="10" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="RLE-I8-WAB"/>
+                            <constraint firstAttribute="width" constant="24" id="XH4-8N-Q0B"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSQ-dF-157">
+                        <rect key="frame" x="56" y="13.5" width="90" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="90" id="wRq-XQ-n2a"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yl7-BT-VOU">
+                        <rect key="frame" x="162" y="15" width="142" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="yl7-BT-VOU" firstAttribute="leading" secondItem="NSQ-dF-157" secondAttribute="trailing" constant="16" id="6dS-qw-ySp"/>
+                    <constraint firstAttribute="trailing" secondItem="yl7-BT-VOU" secondAttribute="trailing" constant="16" id="BKC-gS-3Us"/>
+                    <constraint firstItem="NSQ-dF-157" firstAttribute="centerY" secondItem="Bk0-d1-KMd" secondAttribute="centerY" id="Sc5-zW-1sT"/>
+                    <constraint firstItem="MZb-70-dD6" firstAttribute="leading" secondItem="Bk0-d1-KMd" secondAttribute="leading" constant="16" id="eGs-UB-y3r"/>
+                    <constraint firstItem="MZb-70-dD6" firstAttribute="centerY" secondItem="Bk0-d1-KMd" secondAttribute="centerY" id="qVJ-hJ-tu8"/>
+                    <constraint firstItem="NSQ-dF-157" firstAttribute="leading" secondItem="MZb-70-dD6" secondAttribute="trailing" constant="16" id="w03-vO-cg5"/>
+                    <constraint firstItem="yl7-BT-VOU" firstAttribute="centerY" secondItem="Bk0-d1-KMd" secondAttribute="centerY" id="yy4-wf-Dw3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="image" destination="MZb-70-dD6" id="2nf-jA-ZhR"/>
+                <outlet property="lbContent" destination="yl7-BT-VOU" id="kq0-15-jpb"/>
+                <outlet property="lbTitle" destination="NSQ-dF-157" id="lYb-wD-vhp"/>
+            </connections>
+            <point key="canvasLocation" x="-153" y="95"/>
+        </tableViewCell>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>

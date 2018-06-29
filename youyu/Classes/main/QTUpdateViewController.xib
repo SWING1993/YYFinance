@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QTUpdateViewController">
+            <connections>
+                <outlet property="lbtime" destination="Fhv-5K-GrI" id="Khf-G1-tTd"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sys_update" translatesAutoresizingMaskIntoConstraints="NO" id="cBT-Tc-SRZ">
+                    <rect key="frame" x="84" y="73.5" width="153" height="153"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="153" id="B40-M3-o8k"/>
+                        <constraint firstAttribute="width" constant="153" id="Rm0-qD-fak"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小祺加班升级系统中，请您先喝杯咖啡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="90f-Sz-Xsu">
+                    <rect key="frame" x="15.5" y="250.5" width="289" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.13333333333333333" green="0.47058823529411764" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fhv-5K-GrI">
+                    <rect key="frame" x="194.5" y="291" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.039215686274509803" green="0.23137254901960785" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="升级完成倒计时：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kb2-oM-tYB">
+                    <rect key="frame" x="49.5" y="291" width="136" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.1333333333" green="0.47058823529999999" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="kb2-oM-tYB" firstAttribute="leading" secondItem="90f-Sz-Xsu" secondAttribute="leading" constant="34" id="CBA-8X-6aO"/>
+                <constraint firstItem="Fhv-5K-GrI" firstAttribute="leading" secondItem="kb2-oM-tYB" secondAttribute="trailing" constant="9" id="CwJ-pP-uOH"/>
+                <constraint firstItem="kb2-oM-tYB" firstAttribute="top" secondItem="90f-Sz-Xsu" secondAttribute="bottom" constant="20" id="FVv-L6-E6a"/>
+                <constraint firstItem="kb2-oM-tYB" firstAttribute="baseline" secondItem="90f-Sz-Xsu" secondAttribute="baseline" id="J4N-HB-KWZ"/>
+                <constraint firstItem="90f-Sz-Xsu" firstAttribute="top" secondItem="cBT-Tc-SRZ" secondAttribute="bottom" constant="24" id="Ly2-mt-y8H"/>
+                <constraint firstItem="cBT-Tc-SRZ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-90" id="Rdn-PV-6f1"/>
+                <constraint firstItem="90f-Sz-Xsu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="13" id="Uu7-Jp-VXA"/>
+                <constraint firstAttribute="trailing" secondItem="90f-Sz-Xsu" secondAttribute="trailing" constant="13" id="fgi-Qg-S6K"/>
+                <constraint firstItem="cBT-Tc-SRZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fjG-cw-GDG"/>
+                <constraint firstItem="kb2-oM-tYB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="27" id="lqo-iP-vj1"/>
+                <constraint firstItem="Fhv-5K-GrI" firstAttribute="leading" secondItem="kb2-oM-tYB" secondAttribute="trailing" constant="29" id="rNC-ZM-jbK"/>
+                <constraint firstItem="Fhv-5K-GrI" firstAttribute="top" secondItem="90f-Sz-Xsu" secondAttribute="bottom" constant="20" id="sqt-6g-ahS"/>
+                <constraint firstItem="90f-Sz-Xsu" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yky-vd-2V2"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Uu7-Jp-VXA"/>
+                    <exclude reference="fgi-Qg-S6K"/>
+                    <exclude reference="J4N-HB-KWZ"/>
+                    <exclude reference="lqo-iP-vj1"/>
+                    <exclude reference="rNC-ZM-jbK"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="293" y="320"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="sys_update" width="153" height="153"/>
+    </resources>
+</document>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HSDInvestmentViewController">
+            <connections>
+                <outlet property="bidBtn" destination="rn3-eK-WQP" id="6Tg-gv-38S"/>
+                <outlet property="headerView" destination="nFP-yb-CLR" id="4Mj-Bm-EjA"/>
+                <outlet property="titleLable" destination="h03-6M-5Ac" id="fnO-dF-gIp"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </view>
+        <view contentMode="scaleToFill" id="nFP-yb-CLR">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="invest_new_hand" translatesAutoresizingMaskIntoConstraints="NO" id="L64-Rq-O3H">
+                    <rect key="frame" x="20" y="12" width="335" height="186"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18%新手标收益" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h03-6M-5Ac">
+                    <rect key="frame" x="20" y="66" width="335" height="58"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="58" id="pgH-lz-fc7"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rn3-eK-WQP">
+                    <rect key="frame" x="136" y="145" width="102" height="36"/>
+                    <color key="backgroundColor" red="1" green="0.46666666670000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="cxQ-iC-LD7"/>
+                        <constraint firstAttribute="width" constant="102" id="zgC-fx-695"/>
+                    </constraints>
+                    <state key="normal" image="invest_btn_bid"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="18"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="rn3-eK-WQP" firstAttribute="centerX" secondItem="nFP-yb-CLR" secondAttribute="centerX" id="2Hg-Rh-peN"/>
+                <constraint firstAttribute="bottom" secondItem="L64-Rq-O3H" secondAttribute="bottom" constant="12" id="AOw-pq-7VH"/>
+                <constraint firstAttribute="bottom" secondItem="rn3-eK-WQP" secondAttribute="bottom" constant="29" id="Ht4-8z-2f9"/>
+                <constraint firstItem="h03-6M-5Ac" firstAttribute="centerY" secondItem="L64-Rq-O3H" secondAttribute="centerY" constant="-10" id="OWx-7v-8ls"/>
+                <constraint firstItem="L64-Rq-O3H" firstAttribute="leading" secondItem="nFP-yb-CLR" secondAttribute="leading" constant="20" id="UMF-3m-xUW"/>
+                <constraint firstItem="h03-6M-5Ac" firstAttribute="centerX" secondItem="nFP-yb-CLR" secondAttribute="centerX" id="d1d-UO-epI"/>
+                <constraint firstAttribute="trailing" secondItem="h03-6M-5Ac" secondAttribute="trailing" constant="20" id="h2o-8i-kxi"/>
+                <constraint firstItem="L64-Rq-O3H" firstAttribute="top" secondItem="nFP-yb-CLR" secondAttribute="top" constant="12" id="kjc-Yw-kyO"/>
+                <constraint firstAttribute="trailing" secondItem="L64-Rq-O3H" secondAttribute="trailing" constant="20" id="mex-ac-Ew3"/>
+                <constraint firstItem="h03-6M-5Ac" firstAttribute="leading" secondItem="nFP-yb-CLR" secondAttribute="leading" constant="20" id="xor-Cx-1YT"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="27" y="924"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="invest_btn_bid" width="102" height="36"/>
+        <image name="invest_new_hand" width="346" height="196"/>
+    </resources>
+</document>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QTPointRecordViewController">
+            <connections>
+                <outlet property="headView" destination="c2u-Gd-ePI" id="1Ye-P7-x3J"/>
+                <outlet property="itemView" destination="h4K-x9-O2H" id="OTR-Cn-fTL"/>
+                <outlet property="lbOutdate" destination="VCA-Ky-fy1" id="NlK-ag-qq0"/>
+                <outlet property="lbPoint" destination="ZnX-f7-Jwb" id="zHm-WP-WTb"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <point key="canvasLocation" x="350" y="798"/>
+        </view>
+        <view contentMode="scaleToFill" id="c2u-Gd-ePI">
+            <rect key="frame" x="0.0" y="0.0" width="399" height="110"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZnX-f7-Jwb">
+                    <rect key="frame" x="0.0" y="0.0" width="199.5" height="71"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="71" id="NSd-bh-VLd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCA-Ky-fy1">
+                    <rect key="frame" x="199.5" y="0.0" width="199.5" height="71"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="71" id="apy-f2-SMY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h4K-x9-O2H">
+                    <rect key="frame" x="0.0" y="66" width="399" height="44"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="XPE-on-lHP"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="h4K-x9-O2H" secondAttribute="bottom" id="3AN-z6-ujw"/>
+                <constraint firstItem="VCA-Ky-fy1" firstAttribute="top" secondItem="c2u-Gd-ePI" secondAttribute="top" id="8V1-u2-9bU"/>
+                <constraint firstAttribute="bottom" secondItem="VCA-Ky-fy1" secondAttribute="bottom" id="D50-PN-baS"/>
+                <constraint firstItem="ZnX-f7-Jwb" firstAttribute="top" secondItem="c2u-Gd-ePI" secondAttribute="top" id="H7G-41-Jhe"/>
+                <constraint firstAttribute="trailing" secondItem="VCA-Ky-fy1" secondAttribute="trailing" id="QbM-kJ-NRT"/>
+                <constraint firstItem="VCA-Ky-fy1" firstAttribute="width" secondItem="ZnX-f7-Jwb" secondAttribute="width" id="SRP-93-QYE"/>
+                <constraint firstItem="h4K-x9-O2H" firstAttribute="leading" secondItem="c2u-Gd-ePI" secondAttribute="leading" id="WPs-k9-3hS"/>
+                <constraint firstItem="ZnX-f7-Jwb" firstAttribute="leading" secondItem="c2u-Gd-ePI" secondAttribute="leading" id="WRF-Wg-CWJ"/>
+                <constraint firstItem="VCA-Ky-fy1" firstAttribute="leading" secondItem="ZnX-f7-Jwb" secondAttribute="trailing" id="Z4h-a9-aXt"/>
+                <constraint firstAttribute="bottom" secondItem="ZnX-f7-Jwb" secondAttribute="bottom" id="ZsQ-BR-AdS"/>
+                <constraint firstAttribute="trailing" secondItem="h4K-x9-O2H" secondAttribute="trailing" id="kq1-IN-KYW"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="ZsQ-BR-AdS"/>
+                    <exclude reference="D50-PN-baS"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="118.5" y="300"/>
+        </view>
+    </objects>
+</document>
