@@ -38,10 +38,6 @@
     if (self.dataSource.count<= 0) {
         [self startApi];
     }
-    
-    id test = @"";
-    NSDictionary *dic = test;
-    [dic handleError];
 }
 
 - (void)initSubviews {
