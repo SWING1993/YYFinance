@@ -469,7 +469,7 @@ static CGFloat const oneDayTime = 60 * 60 * 24;
         [super commonJson];
         
         //获取已注册人数
-        [[NSUserDefaults standardUserDefaults]setInteger:value.i(@"register_total") forKey:@"register_total"];
+        [[NSUserDefaults standardUserDefaults] setInteger:value.i(@"register_total") forKey:@"register_total"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
         if ([value[@"article_list"] isKindOfClass:[NSArray class]]) {

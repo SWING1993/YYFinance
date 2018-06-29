@@ -39,14 +39,11 @@
     title.backgroundColor = [UIColor clearColor];
     title.numberOfLines = 0;
     NSInteger register_total = [[NSUserDefaults standardUserDefaults] integerForKey:@"register_total"];
-    NSString *investTotalStr = [NSString stringWithFormat:@"在有余金服\n%ld人\n与您一起放心理财",register_total];
-    NSMutableAttributedString *strAttr = [[NSMutableAttributedString alloc]initWithString:investTotalStr];
-    for (int i = 0; i<= investTotalStr.length; i++) {
-        NSString *a = [investTotalStr substringWithRange:NSMakeRange(i, 1)];
-        if ([NSString isPureInt:a]) {
-            [strAttr setAttributes:@{NSForegroundColorAttributeName:MainColor,NSFontAttributeName: [UIFont systemFontOfSize:30]} range:NSMakeRange(i, 1)];
-        }
-    }
+    NSString *totalStr = [NSString stringWithFormat:@"%ld",register_total];
+    NSString *investTotalStr = [NSString stringWithFormat:@"在有余金服\n%@人\n与您一起放心理财",totalStr];
+    NSMutableAttributedString *strAttr = [[NSMutableAttributedString alloc] initWithString:investTotalStr];
+
+    [strAttr setAttributes:@{NSForegroundColorAttributeName:MainColor,NSFontAttributeName: [UIFont systemFontOfSize:30]} range:NSMakeRange(6, totalStr.length)];
     title.attributedText = strAttr;
     [self.headImage addSubview:title];
     

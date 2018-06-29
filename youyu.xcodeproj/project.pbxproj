@@ -45,6 +45,7 @@
 		031FC11920E632760045F988 /* FUMobilePay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 031FC11820E632760045F988 /* FUMobilePay.framework */; };
 		031FC11A20E632820045F988 /* FUMobilePay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 031FC11820E632760045F988 /* FUMobilePay.framework */; };
 		031FC11B20E632820045F988 /* FUMobilePay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 031FC11820E632760045F988 /* FUMobilePay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		031FC11E20E6387E0045F988 /* NSObject+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 031FC11D20E6387E0045F988 /* NSObject+Error.m */; };
 		03390FCB20D8EA6F00F33055 /* UIView+FLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 03390E3F20D8EA6E00F33055 /* UIView+FLExtension.m */; };
 		03390FCC20D8EA6F00F33055 /* NSDate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 03390E4520D8EA6E00F33055 /* NSDate+Category.m */; };
 		03390FCD20D8EA6F00F33055 /* NSString+HDValid.m in Sources */ = {isa = PBXBuildFile; fileRef = 03390E4A20D8EA6E00F33055 /* NSString+HDValid.m */; };
@@ -785,6 +786,8 @@
 		031A5B1020D3C14F00E0AF88 /* YYMessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYMessageModel.h; sourceTree = "<group>"; };
 		031A5B1120D3C14F00E0AF88 /* YYMessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYMessageModel.m; sourceTree = "<group>"; };
 		031FC11820E632760045F988 /* FUMobilePay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FUMobilePay.framework; sourceTree = "<group>"; };
+		031FC11C20E6387E0045F988 /* NSObject+Error.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Error.h"; sourceTree = "<group>"; };
+		031FC11D20E6387E0045F988 /* NSObject+Error.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Error.m"; sourceTree = "<group>"; };
 		03390E3B20D8EA6E00F33055 /* HelpDeskUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpDeskUI.h; sourceTree = "<group>"; };
 		03390E3E20D8EA6E00F33055 /* UIView+FLExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FLExtension.h"; sourceTree = "<group>"; };
 		03390E3F20D8EA6E00F33055 /* UIView+FLExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FLExtension.m"; sourceTree = "<group>"; };
@@ -4439,6 +4442,8 @@
 			children = (
 				03997ECC20DB4B5100A12095 /* AppDelegate+Config.h */,
 				03997ECD20DB4B5100A12095 /* AppDelegate+Config.m */,
+				031FC11C20E6387E0045F988 /* NSObject+Error.h */,
+				031FC11D20E6387E0045F988 /* NSObject+Error.m */,
 				031A5AEF20D3990100E0AF88 /* NSDate+Extension.h */,
 				031A5AEE20D3990000E0AF88 /* NSDate+Extension.m */,
 				031A5AF020D3990100E0AF88 /* NSDate+Utilities.h */,
@@ -5732,6 +5737,7 @@
 				3F45C19B1F9EEF99001F5696 /* HSDInvestmentViewController.m in Sources */,
 				145DCEE61C1A6AE800C090CF /* CSChartsDetailRect.m in Sources */,
 				0339110620D8EF7000F33055 /* EMSDWebImageDownloaderOperation.m in Sources */,
+				031FC11E20E6387E0045F988 /* NSObject+Error.m in Sources */,
 				141CF1331C10255B0045400D /* NSString+Encry.m in Sources */,
 				18FA41FD20CE49E500F10DDF /* UIBarButtonItem+Badge.m in Sources */,
 				142657BE1E77F6D600105C39 /* UIImageView+webImage.m in Sources */,

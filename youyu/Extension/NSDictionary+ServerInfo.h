@@ -20,6 +20,4 @@
 
 - (NSDictionary *)content;
 
-- (void)handleError;
-
 @end

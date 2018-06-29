@@ -118,6 +118,7 @@
     [self.scrollview.mj_footer endRefreshing];
     
     [dic handleError];
+    
 
     /*
     if ([dic isKindOfClass:[NSDictionary class]]) {

@@ -49,6 +49,7 @@
 
 
 #pragma mark - Category
+#import "NSObject+Error.h"
 #import "UIButton+WebCache.h"
 #import "UIImage+NZZScaleImage.h"
 #import "UIButton+WebCache.h"

@@ -38,6 +38,10 @@
     if (self.dataSource.count<= 0) {
         [self startApi];
     }
+    
+    id test = @"";
+    NSDictionary *dic = test;
+    [dic handleError];
 }
 
 - (void)initSubviews {
@@ -66,7 +70,7 @@
 
     UIView *tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, kScaleFrom_iPhone6_Desgin(307.5))];
     tableHeaderView.backgroundColor = kColorWhite;
-    SDCycleScrollView *banner = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, kScreenW,kScaleFrom_iPhone6_Desgin(225)) delegate:self placeholderImage:[UIImage imageWithColor:kColorBackGround size:CGSizeZero]];
+    SDCycleScrollView *banner = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, kScreenW,kScaleFrom_iPhone6_Desgin(225)) delegate:self placeholderImage:kPlaceholderImage];
     self.banner = banner;
     [tableHeaderView addSubview:banner];
     
@@ -109,6 +113,9 @@
         @strongify(self);
         [self.tableView.mj_header endRefreshing];
         NSDictionary *resultDict = (NSDictionary *)request.responseObject;
+        //获取已注册人数
+        [[NSUserDefaults standardUserDefaults] setInteger:resultDict.content.i(@"register_total") forKey:@"register_total"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         if (resultDict.code == 100000) {
             self.unread_messes = [resultDict.content[@"unread_messes"] integerValue];
             [self setMessageBtnImageWhitAlpha:0];
