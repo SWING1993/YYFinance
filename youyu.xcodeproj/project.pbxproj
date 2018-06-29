@@ -42,6 +42,9 @@
 		031A5B0C20D3BA7800E0AF88 /* YYMessageListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 031A5B0B20D3BA7800E0AF88 /* YYMessageListController.m */; };
 		031A5B0F20D3BBB300E0AF88 /* YYMessageListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 031A5B0E20D3BBB300E0AF88 /* YYMessageListCell.m */; };
 		031A5B1220D3C14F00E0AF88 /* YYMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 031A5B1120D3C14F00E0AF88 /* YYMessageModel.m */; };
+		031FC11920E632760045F988 /* FUMobilePay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 031FC11820E632760045F988 /* FUMobilePay.framework */; };
+		031FC11A20E632820045F988 /* FUMobilePay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 031FC11820E632760045F988 /* FUMobilePay.framework */; };
+		031FC11B20E632820045F988 /* FUMobilePay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 031FC11820E632760045F988 /* FUMobilePay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		03390FCB20D8EA6F00F33055 /* UIView+FLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 03390E3F20D8EA6E00F33055 /* UIView+FLExtension.m */; };
 		03390FCC20D8EA6F00F33055 /* NSDate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 03390E4520D8EA6E00F33055 /* NSDate+Category.m */; };
 		03390FCD20D8EA6F00F33055 /* NSString+HDValid.m in Sources */ = {isa = PBXBuildFile; fileRef = 03390E4A20D8EA6E00F33055 /* NSString+HDValid.m */; };
@@ -575,8 +578,6 @@
 		25F7B1401F70FB980042F6BA /* HRBindBankViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25F7B13E1F70FB980042F6BA /* HRBindBankViewController.xib */; };
 		25F7B1441F70FBF80042F6BA /* HRRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F7B1421F70FBF80042F6BA /* HRRegisterViewController.m */; };
 		25F7B1451F70FBF80042F6BA /* HRRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25F7B1431F70FBF80042F6BA /* HRRegisterViewController.xib */; };
-		3F2F0E1F1FA80D9600AA5A11 /* FUMobilePay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F2F0E1D1FA80D5E00AA5A11 /* FUMobilePay.framework */; };
-		3F2F0E201FA80D9600AA5A11 /* FUMobilePay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F2F0E1D1FA80D5E00AA5A11 /* FUMobilePay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3F45C19B1F9EEF99001F5696 /* HSDInvestmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45C1991F9EEF99001F5696 /* HSDInvestmentViewController.m */; };
 		3F45C19C1F9EEF99001F5696 /* HSDInvestmentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F45C19A1F9EEF99001F5696 /* HSDInvestmentViewController.xib */; };
 		3F45C1A31F9EF175001F5696 /* HSDTrendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45C1A21F9EF175001F5696 /* HSDTrendViewController.m */; };
@@ -703,8 +704,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				031FC11B20E632820045F988 /* FUMobilePay.framework in Embed Frameworks */,
 				03997EDC20DB58AD00A12095 /* HelpDesk.framework in Embed Frameworks */,
-				3F2F0E201FA80D9600AA5A11 /* FUMobilePay.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -783,6 +784,7 @@
 		031A5B0E20D3BBB300E0AF88 /* YYMessageListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYMessageListCell.m; sourceTree = "<group>"; };
 		031A5B1020D3C14F00E0AF88 /* YYMessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYMessageModel.h; sourceTree = "<group>"; };
 		031A5B1120D3C14F00E0AF88 /* YYMessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYMessageModel.m; sourceTree = "<group>"; };
+		031FC11820E632760045F988 /* FUMobilePay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FUMobilePay.framework; sourceTree = "<group>"; };
 		03390E3B20D8EA6E00F33055 /* HelpDeskUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpDeskUI.h; sourceTree = "<group>"; };
 		03390E3E20D8EA6E00F33055 /* UIView+FLExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FLExtension.h"; sourceTree = "<group>"; };
 		03390E3F20D8EA6E00F33055 /* UIView+FLExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FLExtension.m"; sourceTree = "<group>"; };
@@ -1732,7 +1734,6 @@
 		25F7B1411F70FBF80042F6BA /* HRRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRRegisterViewController.h; sourceTree = "<group>"; };
 		25F7B1421F70FBF80042F6BA /* HRRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRRegisterViewController.m; sourceTree = "<group>"; };
 		25F7B1431F70FBF80042F6BA /* HRRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HRRegisterViewController.xib; sourceTree = "<group>"; };
-		3F2F0E1D1FA80D5E00AA5A11 /* FUMobilePay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FUMobilePay.framework; sourceTree = "<group>"; };
 		3F45C1981F9EEF99001F5696 /* HSDInvestmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSDInvestmentViewController.h; sourceTree = "<group>"; };
 		3F45C1991F9EEF99001F5696 /* HSDInvestmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSDInvestmentViewController.m; sourceTree = "<group>"; };
 		3F45C19A1F9EEF99001F5696 /* HSDInvestmentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HSDInvestmentViewController.xib; sourceTree = "<group>"; };
@@ -1952,6 +1953,7 @@
 				92A761ED1FC55350004D5503 /* libDZNEmptyDataSet.a in Frameworks */,
 				147F0F711B82C52700D42039 /* CoreTelephony.framework in Frameworks */,
 				147F0F731B82C53100D42039 /* CoreGraphics.framework in Frameworks */,
+				031FC11A20E632820045F988 /* FUMobilePay.framework in Frameworks */,
 				14DB85C91C89881E00041589 /* AdSupport.framework in Frameworks */,
 				14C4FE8B1DEC2E0A001A7C84 /* libxml2.2.tbd in Frameworks */,
 				03997EDA20DB589F00A12095 /* HelpDesk.framework in Frameworks */,
@@ -1960,11 +1962,11 @@
 				18905E8E20C9345900B96B01 /* libWeChatSDK.a in Frameworks */,
 				14C4FE851DEC2DCD001A7C84 /* libxml2.tbd in Frameworks */,
 				14C4FE831DEC2DC3001A7C84 /* libz.tbd in Frameworks */,
-				3F2F0E1F1FA80D9600AA5A11 /* FUMobilePay.framework in Frameworks */,
 				147F0F7F1B82D4A300D42039 /* CoreLocation.framework in Frameworks */,
 				147F0F751B82C53C00D42039 /* Security.framework in Frameworks */,
 				147F0F6F1B82C51E00D42039 /* CoreFoundation.framework in Frameworks */,
 				147F0F6D1B82C51300D42039 /* CFNetwork.framework in Frameworks */,
+				031FC11920E632760045F988 /* FUMobilePay.framework in Frameworks */,
 				18905E9D20C9359400B96B01 /* libUMessage_Sdk_1.4.0.a in Frameworks */,
 				14D802E91B6F571D007271E6 /* SystemConfiguration.framework in Frameworks */,
 				03997EDB20DB58AD00A12095 /* HelpDesk.framework in Frameworks */,
@@ -2026,6 +2028,14 @@
 				031A5B0420D3B7A400E0AF88 /* MLMSegmentScroll.h */,
 			);
 			path = MLMSegmentPageView;
+			sourceTree = "<group>";
+		};
+		031FC11720E632760045F988 /* FUMobilePay */ = {
+			isa = PBXGroup;
+			children = (
+				031FC11820E632760045F988 /* FUMobilePay.framework */,
+			);
+			path = FUMobilePay;
 			sourceTree = "<group>";
 		};
 		03390E0220D8CCCD00F33055 /* Resources */ = {
@@ -3848,6 +3858,7 @@
 		147F0F661B82C4DE00D42039 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				031FC11720E632760045F988 /* FUMobilePay */,
 				03390E2D20D8E67500F33055 /* HelpDesk1.1.9 */,
 				031A5AF920D3B7A400E0AF88 /* MLMSegmentPageView */,
 				031A5AA420D0EF8700E0AF88 /* ProgressViews */,
@@ -4873,7 +4884,6 @@
 				92D2E42E1FC54608001B7D2E /* ImageIO.framework */,
 				92D2E42D1FC545F6001B7D2E /* Foundation.framework */,
 				92D2E42C1FC545AC001B7D2E /* AVFoundation.framework */,
-				3F2F0E1D1FA80D5E00AA5A11 /* FUMobilePay.framework */,
 				14C4FE8A1DEC2E0A001A7C84 /* libxml2.2.tbd */,
 				14C4FE881DEC2DE0001A7C84 /* libsqlite3.tbd */,
 				14C4FE861DEC2DD6001A7C84 /* libresolv.tbd */,
@@ -6041,6 +6051,7 @@
 					"$(PROJECT_DIR)/youyu/Vendor",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/youyu/Vendor/HelpDesk1.1.9",
+					"$(PROJECT_DIR)/youyu/Vendor/FUMobilePay",
 				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -6115,6 +6126,7 @@
 					"$(PROJECT_DIR)/youyu/Vendor",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/youyu/Vendor/HelpDesk1.1.9",
+					"$(PROJECT_DIR)/youyu/Vendor/FUMobilePay",
 				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
