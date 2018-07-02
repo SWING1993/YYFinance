@@ -176,6 +176,7 @@
 		03997EDB20DB58AD00A12095 /* HelpDesk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03997ED920DB589F00A12095 /* HelpDesk.framework */; };
 		03997EDC20DB58AD00A12095 /* HelpDesk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03997ED920DB589F00A12095 /* HelpDesk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		03997FD420DB88CF00A12095 /* QMUIConfigurationTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03997FD320DB88CF00A12095 /* QMUIConfigurationTemplate.m */; };
+		0399B14A20E9DA32006A4634 /* YYInvestRecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0399B14920E9DA32006A4634 /* YYInvestRecordController.m */; };
 		039A4F7620DCFDA20030076D /* newtip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 039A4F7420DCFDA10030076D /* newtip@2x.png */; };
 		039A4F7720DCFDA20030076D /* newtip@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 039A4F7520DCFDA10030076D /* newtip@3x.png */; };
 		039A4F7A20E09F500030076D /* YYDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 039A4F7920E09F500030076D /* YYDefine.m */; };
@@ -1046,6 +1047,8 @@
 		03997ED920DB589F00A12095 /* HelpDesk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HelpDesk.framework; sourceTree = "<group>"; };
 		03997FD220DB88CE00A12095 /* QMUIConfigurationTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMUIConfigurationTemplate.h; sourceTree = "<group>"; };
 		03997FD320DB88CF00A12095 /* QMUIConfigurationTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMUIConfigurationTemplate.m; sourceTree = "<group>"; };
+		0399B14820E9DA32006A4634 /* YYInvestRecordController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYInvestRecordController.h; sourceTree = "<group>"; };
+		0399B14920E9DA32006A4634 /* YYInvestRecordController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYInvestRecordController.m; sourceTree = "<group>"; };
 		039A4F6F20DCEEF40030076D /* Hyphenate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Hyphenate.framework; sourceTree = "<group>"; };
 		039A4F7420DCFDA10030076D /* newtip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newtip@2x.png"; sourceTree = "<group>"; };
 		039A4F7520DCFDA10030076D /* newtip@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newtip@3x.png"; sourceTree = "<group>"; };
@@ -3275,6 +3278,8 @@
 			children = (
 				92528C221FBD8EB9007AB4B5 /* YYInvestListViewController.h */,
 				92528C231FBD8EB9007AB4B5 /* YYInvestListViewController.m */,
+				0399B14820E9DA32006A4634 /* YYInvestRecordController.h */,
+				0399B14920E9DA32006A4634 /* YYInvestRecordController.m */,
 				3F45C1971F9EEF99001F5696 /* HSD-投资 */,
 				146E4C681B6B0BEA00BC3390 /* 进行投资 */,
 				147BC11D1B6A045D0024107C /* 投资详情 */,
@@ -5785,6 +5790,7 @@
 				144236581D470D010059B947 /* UIViewController+menu.m in Sources */,
 				14970E2C1B5F629C00EAEF68 /* QTBankViewController.m in Sources */,
 				145DCF091C1A6AE800C090CF /* UIView+CustomFrame.m in Sources */,
+				0399B14A20E9DA32006A4634 /* YYInvestRecordController.m in Sources */,
 				03390FD220D8EA6F00F33055 /* HDMessageReadManager.m in Sources */,
 				031A5B0F20D3BBB300E0AF88 /* YYMessageListCell.m in Sources */,
 				0339104720D8EA6F00F33055 /* HDMessageTimeCell.m in Sources */,

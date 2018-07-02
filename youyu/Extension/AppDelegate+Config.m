@@ -30,6 +30,8 @@
 
 - (void)setConfigurationWithOptions:(NSDictionary *)launchOptions {
 
+    [self registerUserNotification];
+    
     // 友盟统计
     UMConfigInstance.appKey = KEY_UM;
     [MobClick setAppVersion:XcodeAppVersion];
@@ -101,7 +103,73 @@
     [self customizeAppearance];
 }
 
+#pragma mark - 注册推送通知
+- (void)registerUserNotification
+{
+    if (ios10x) {
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        center.delegate = self;
+        [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert | UNAuthorizationOptionBadge | UNAuthorizationOptionSound) completionHandler:^(BOOL granted, NSError * _Nullable error) {
+            if (granted) {
+                //获取当前的通知设置，UNNotificationSettings是只读对象，不能直接修改，只能通过以下方法获取
+                [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
+                }];
+            }
+        }];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+    } else {
+        UIUserNotificationType types = (UIUserNotificationTypeAlert | UIUserNotificationTypeSound | UIUserNotificationTypeBadge);
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    }
+}
 
+#pragma mark - 将得到的deviceToken传给SDK
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    [[HChatClient sharedClient] bindDeviceToken:deviceToken];
+}
+
+#pragma mark - 注册deviceToken失败
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+    NSLog(@"error -- %@",error);
+}
+
+#pragma mark - 处理通知在前台运行时的情况 UNUserNotificationCenterDelegate
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler{
+    NSDictionary * userInfo = notification.request.content.userInfo;
+    if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+        //应用处于前台时的远程推送接受
+        //关闭U-Push自带的弹出框
+        [UMessage setAutoAlert:NO];
+        //必须加这句代码
+        [UMessage didReceiveRemoteNotification:userInfo];
+        completionHandler(UNNotificationPresentationOptionAlert);
+        NSLog(@"//应用处于前台时的远程推送接受关闭U-Push自带的弹出框");
+    } else {
+        //应用处于前台时的本地推送接受
+        NSLog(@"//应用处于前台时的本地推送接受");
+    }
+    //当应用处于前台时提示设置，需要哪个可以设置哪一个
+    completionHandler(UNNotificationPresentationOptionAlert|UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionSound);
+}
+
+#pragma mark - 处理后台点击通知的代理方法
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler{
+    NSDictionary * userInfo = response.notification.request.content.userInfo;
+    if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+        //应用处于后台时的远程推送接受
+        [UMessage didReceiveRemoteNotification:userInfo];
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTICEWEB object:self userInfo:userInfo];
+        
+    } else {
+        //应用处于后台时的本地推送接受
+        NSLog(@"//应用处于后台时的本地推送接受");
+    }
+}
+
+
+#pragma mark - 处理通知
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [UMessage didReceiveRemoteNotification:userInfo];
     UILocalNotification *notification = [[UILocalNotification alloc] init];
@@ -114,40 +182,7 @@
     [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
     
     if (application.applicationState != UIApplicationStateActive) {
-        [[NSNotificationCenter defaultCenter]postNotificationName:@"userNotification" object:self userInfo:userInfo];
-    }
-}
-
-//iOS10新增：处理前台收到通知的代理方法
--(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler{
-    NSDictionary * userInfo = notification.request.content.userInfo;
-    if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
-        //应用处于前台时的远程推送接受
-        //关闭U-Push自带的弹出框
-        [UMessage setAutoAlert:NO];
-        //必须加这句代码
-        [UMessage didReceiveRemoteNotification:userInfo];
-        completionHandler(UNNotificationPresentationOptionAlert);
-        NSLog(@"//应用处于前台时的远程推送接受关闭U-Push自带的弹出框");
-    }else{
-        //应用处于前台时的本地推送接受
-        NSLog(@"//应用处于前台时的本地推送接受");
-    }
-    //当应用处于前台时提示设置，需要哪个可以设置哪一个
-    //    completionHandler(UNNotificationPresentationOptionAlert|UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionSound);
-}
-
-//iOS10新增：处理后台点击通知的代理方法
--(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler{
-    NSDictionary * userInfo = response.notification.request.content.userInfo;
-    if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
-        //应用处于后台时的远程推送接受
-        [UMessage didReceiveRemoteNotification:userInfo];
-        [[NSNotificationCenter defaultCenter]postNotificationName:@"userNotification" object:self userInfo:userInfo];
-        
-    } else {
-        //应用处于后台时的本地推送接受
-        NSLog(@"//应用处于后台时的本地推送接受");
+        [[NSNotificationCenter defaultCenter]postNotificationName:NOTICEWEB object:self userInfo:userInfo];
     }
 }
 

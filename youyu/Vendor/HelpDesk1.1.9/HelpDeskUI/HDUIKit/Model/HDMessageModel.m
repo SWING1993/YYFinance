@@ -57,6 +57,8 @@
             } else {
                 _nickname = message.from;
             }
+            self.avatarURLPath = [GVUserDefaults shareInstance].litpic;
+            self.avatarImage = UIImageMake(@"icon_account_user");
         }
         
         switch (_firstMessageBody.type) {

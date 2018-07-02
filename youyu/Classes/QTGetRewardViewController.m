@@ -92,7 +92,7 @@
             msg = [NSString stringWithFormat:@"兑换成功,%@元红包券", value.str(@"reward_money")];
             type = @"1";
         } else if (value.i(@"type") == 4) {
-            msg = [NSString stringWithFormat:@"兑换成功,%@%%年化券", value.str(@"reward_money")];
+            msg = [NSString stringWithFormat:@"兑换成功,%@%%加息券", value.str(@"reward_money")];
             type = @"2";
         }
 

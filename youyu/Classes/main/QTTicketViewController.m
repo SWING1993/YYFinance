@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.titleView.title = @"年化券";
+    self.titleView.title = @"加息券";
 
     TABLEReg(QTTicketCell, @"ticketcell");
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(commonJson) name:@"reward" object:nil];
@@ -58,7 +58,7 @@
 }
 
 - (NSAttributedString *)descriptionForEmptyDataSet:(UIScrollView *)scrollView {
-    NSString *text = @"暂时没有年化券";
+    NSString *text = @"暂时没有加息券";
 
     NSMutableParagraphStyle *paragraph = [NSMutableParagraphStyle new];
 

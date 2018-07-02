@@ -66,6 +66,8 @@
 #import "HRLoginViewController.h"
 #import "HRBindBankViewController.h"
 #import "HSDSafeViewController.h"
+#import "YYInvestRecordController.h"
+
 
 @implementation UIViewController (page)
 
@@ -276,9 +278,14 @@
 
 //  投资记录
 - (void)toInvestRecord {
+    
+    YYInvestRecordController *controller = [[YYInvestRecordController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
+    
+    /*
     QTInvestRecordViewController *controller1 = [QTInvestRecordViewController controllerFromXib];
-
     controller1.segment = 0;
+   
     QTInvestRecordViewController *controller2 = [QTInvestRecordViewController controllerFromXib];
     controller2.segment = 1;
 
@@ -299,6 +306,7 @@
     pageController.titleView.title = @"投资记录";
 
     [self.navigationController pushViewController:pageController animated:YES];
+     */
 }
 
 //  交易记录

@@ -110,7 +110,7 @@
     UILabel *label = [[UILabel alloc]init];
     label.textColor = [UIColor darkGrayColor];
 
-    NSMutableAttributedString *attsrt = [[NSMutableAttributedString alloc]initWithString:@"VIP订制规则\n1.	VIP订制项目类别不限，单个项目投资金额50万元起，最高投资300万元，项目周期90-720天；\n2.	每个V7账户最多可同时预约3个订制标，若其中有1个订制标配对成功或审核失败，则可再次预约，以此类推。\n3.	VIP订制项目不参与“王者归来”活动，不能使用红包、红包券、年化券；\n4.	收到预约申请后，您的专属客服24小时内会与您确认订制需求，待项目匹配成功后会再次联系您，您也可以在VIP订制专区 “我的VIP订制”查看您的订制项目，完成投资；\n5.	所有VIP订制项目满标计息，当预约成功并确认后，需要在48小时内完成投资，若项目超过48小时未满标，我们会解冻该项目已投金额，并将项目转给其他用户。"];
+    NSMutableAttributedString *attsrt = [[NSMutableAttributedString alloc]initWithString:@"VIP订制规则\n1.	VIP订制项目类别不限，单个项目投资金额50万元起，最高投资300万元，项目周期90-720天；\n2.	每个V7账户最多可同时预约3个订制标，若其中有1个订制标配对成功或审核失败，则可再次预约，以此类推。\n3.	VIP订制项目不参与“王者归来”活动，不能使用红包、红包券、加息券；\n4.	收到预约申请后，您的专属客服24小时内会与您确认订制需求，待项目匹配成功后会再次联系您，您也可以在VIP订制专区 “我的VIP订制”查看您的订制项目，完成投资；\n5.	所有VIP订制项目满标计息，当预约成功并确认后，需要在48小时内完成投资，若项目超过48小时未满标，我们会解冻该项目已投金额，并将项目转给其他用户。"];
     [attsrt setFont:[UIFont systemFontOfSize:12]];
     [attsrt setFont:[UIFont systemFontOfSize:14] string:@"VIP订制规则"];
     [attsrt setParagraphStyle:^(NSMutableParagraphStyle *Paragraph) {

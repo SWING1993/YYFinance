@@ -112,7 +112,7 @@
     }];
     
     [stack addLineForHeight:10 color:[UIColor colorHex:@"f0f0f0"]];
-    NSArray *iconText = @[@"投资红包", @"年化券", @"现金奖励"];
+    NSArray *iconText = @[@"投资红包", @"加息券", @"现金奖励"];
     NSArray *iconImg = @[@"investReward_icon", @"annualCoupon_icon", @"cashReward_icon", ];
     DWrapView *wrap = [[DWrapView alloc]initWidth:APP_WIDTH columns:3];
     wrap.backgroundColor = [Theme backgroundColor];

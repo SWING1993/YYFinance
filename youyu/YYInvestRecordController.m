@@ -1,44 +1,31 @@
 //
-//  QTMyTicketViewController.m
-//  qtyd
+//  YYInvestRecordController.m
+//  youyu
 //
-//  Created by stephendsw on 16/8/28.
-//  Copyright © 2016年 qtyd. All rights reserved.
+//  Created by 宋国华 on 2018/7/2.
+//  Copyright © 2018年 qtyd. All rights reserved.
 //
 
-#import "QTMyTicketViewController.h"
+#import "YYInvestRecordController.h"
 #import "MLMSegmentManager.h"
-#import "QTUser_rewardinfoViewController.h"
-#import "QTTicketViewController.h"
-#import "QTGetRewardViewController.h"
+#import "QTInvestRecordViewController.h"
 
-@interface QTMyTicketViewController ()
+@interface YYInvestRecordController ()
 
 @end
 
-@implementation QTMyTicketViewController
-
+@implementation YYInvestRecordController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem qmui_itemWithTitle:@"礼券兑换" target:self action:@selector(toRewardCode)];
-    self.titleView.title = @"我的礼券";
-    
+    // Do any additional setup after loading the view.
 }
-
-/**
- *  兑换券
- */
-- (void)toRewardCode {
-    QTGetRewardViewController *controller = [QTGetRewardViewController controllerFromXib];
-    [self.navigationController pushViewController:controller animated:YES];
-}
-
 - (void)initSubviews {
     [super initSubviews];
-    NSArray *titles = @[@"现金券", @"红包券", @"加息券"];
-
+    self.titleView.title = @"投资记录";
+    
+    NSArray *titles = @[@"全部", @"履约中", @"已回款", @"未成功"];
+    
     MLMSegmentHead *segHead = [[MLMSegmentHead alloc] initWithFrame:CGRectMake(0, kNaviHeigh, SCREEN_WIDTH, 40) titles:titles headStyle:SegmentHeadStyleLine layoutStyle:MLMSegmentLayoutDefault];
     //    segHead.fontScale = .85;
     segHead.fontSize = 14;
@@ -60,15 +47,19 @@
 
 #pragma mark - 数据源
 - (NSArray *)vcArr {
-    QTUser_rewardinfoViewController *controller1 = [QTUser_rewardinfoViewController controllerFromXib];
+    QTInvestRecordViewController *controller1 = [QTInvestRecordViewController controllerFromXib];
     controller1.segment = 0;
     
-    QTUser_rewardinfoViewController *controller2 = [QTUser_rewardinfoViewController controllerFromXib];
+    QTInvestRecordViewController *controller2 = [QTInvestRecordViewController controllerFromXib];
     controller2.segment = 1;
     
-    QTTicketViewController *controller3 = [QTTicketViewController controllerFromXib];
+    QTInvestRecordViewController *controller3 = [QTInvestRecordViewController controllerFromXib];
+    controller3.segment = 2;
     
-    NSArray *controllers = @[controller1, controller2, controller3];
+    QTInvestRecordViewController *controller4 = [QTInvestRecordViewController controllerFromXib];
+    controller4.segment = 3;
+    
+    NSArray *controllers = @[controller1, controller2, controller3, controller4];
     return controllers;
 }
 

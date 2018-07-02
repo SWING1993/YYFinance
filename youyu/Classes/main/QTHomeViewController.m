@@ -132,7 +132,7 @@ static CGFloat const oneDayTime = 60 * 60 * 24;
     self.view.backgroundColor = [UIColor colorHex:@"E0E0E0"];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(firstGetData) name:NOTICEHOME object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userInfoNotification:) name:@"userNotification" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userInfoNotification:) name:NOTICEWEB object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showActiveView) name:@"showHomeActiveView" object:nil];
     self.arr = [NSMutableArray arrayWithCapacity:1];

@@ -191,7 +191,8 @@
         }
             break;
         case 102:{//投资记录
-            [self performSelector:NSSelectorFromString(@"toInvestRecord")];
+            [self toInvestRecord];
+//            [self performSelector:NSSelectorFromString(@"toInvestRecord")];
         }
             break;
         case 103:{//收支明细

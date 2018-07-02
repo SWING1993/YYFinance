@@ -93,14 +93,14 @@
                 }else{
                 
                     self.selCoupon.enabled = NO;
-                    [self showToast:@"红包和年化券不可同时使用" duration:2];
+                    [self showToast:@"红包和加息券不可同时使用" duration:2];
                 }
             }
         }];
 
     // 加息
 
-    self.selQuan = [grid addRowSelectText:@"年化券" placeholder:@"请选择年化券" done:^{
+    self.selQuan = [grid addRowSelectText:@"加息券" placeholder:@"请选择加息券" done:^{
             if (self.tfMoney.text.length == 0) {
                 [self showToast:@"请输入金额"];
             } else {
@@ -118,7 +118,7 @@
                 }else{
                 
                     self.selQuan.enabled = NO;
-                    [self showToast:@"红包和年化券不可同时使用" duration:2];
+                    [self showToast:@"红包和加息券不可同时使用" duration:2];
                 }
             }
         }];
@@ -286,7 +286,7 @@
         self.selCoupon.placeholder = [NSString stringWithFormat:@"%ld个未使用红包",(unsigned long)couponArray.count];
     }
     if (quanArray.count==0) {
-        self.selQuan.placeholder = @"无可使用年化券";
+        self.selQuan.placeholder = @"无可使用加息券";
     }else{
         
         self.selQuan.placeholder = [NSString stringWithFormat:@"%ld张可使用的加息卷",(unsigned long)quanArray.count];
