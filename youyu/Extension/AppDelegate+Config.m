@@ -104,8 +104,7 @@
 }
 
 #pragma mark - 注册推送通知
-- (void)registerUserNotification
-{
+- (void)registerUserNotification {
     if (ios10x) {
         UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
         center.delegate = self;

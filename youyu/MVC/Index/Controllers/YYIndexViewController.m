@@ -240,7 +240,8 @@
             
         default:
             break;
-    }}
+    }
+}
 
 #pragma mark SDCycleScrollView
 /** 点击图片回调 */
