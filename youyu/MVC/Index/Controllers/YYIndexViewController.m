@@ -155,6 +155,7 @@
         NSDictionary *footerObjc = footerObjcs[i];
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(footerScrWidth*i, 0, footerScrWidth, footerScrHeight)];
         UIImageView *contentView = [[UIImageView alloc] init];
+        contentView.userInteractionEnabled = YES;
         contentView.contentMode = UIViewContentModeScaleAspectFill;
         contentView.clipsToBounds = YES;
         [contentView sd_setImageWithURL:YYURLWithStr(footerObjc[@"url"]) placeholderImage:kPlaceholderImage];
