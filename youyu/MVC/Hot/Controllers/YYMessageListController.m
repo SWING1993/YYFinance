@@ -26,7 +26,6 @@
     [super initSubviews];
 }
 
-
 - (void)initTableView {
     [super initTableView];
     self.tableView.backgroundColor = kColorBackGround;
@@ -47,6 +46,7 @@
 }
 
 - (void)startApi {
+    [self showEmptyViewWithLoading];
     self.pageNum = 1;
     @weakify(self);
     YYRequestApi *api = [[YYRequestApi alloc] initWithPostTaskUrl:@"webMessage_list" requestArgument:[self configRequestArgument]];
@@ -68,7 +68,13 @@
         } else {
             [resultDict handleError];
         }
+        if (self.dataSource.count == 0) {
+            [self showEmptyViewWithText:@"暂无数据" detailText:@"" buttonTitle:nil buttonAction:NULL];
+        } else {
+            [self hideEmptyView];
+        }
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [self showEmptyViewWithText:@"请求失败" detailText:@"请检查网络连接" buttonTitle:@"重试" buttonAction:@selector(startApi)];
         @strongify(self);
         [self.tableView.mj_header endRefreshing];
         NSDictionary *resultDict = (NSDictionary *)request.responseObject;
@@ -138,16 +144,14 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return CGFLOAT_MIN;
 }
+
 - (void)handleDisclosureIndicatorCellEvent:(QMUIStaticTableViewCellData *)cellData {
-    // cell 的点击事件，注意第一个参数的类型是 QMUIStaticTableViewCellData
-//    [QMUITips showWithText:[NSString stringWithFormat:@"点击了 %@", cellData.text] inView:self.view hideAfterDelay:1.2];
     YYMessageModel * model = self.dataSource[cellData.indexPath.section];
     QTWebViewController *webVC = [[QTWebViewController alloc] init];
     NSString *uri = [NSString stringWithFormat:@"/finance/notice_detail/type_id/%@/id/%@",self.type_id,model.id];
     webVC.url = WEB_URL(uri);
     webVC.isNeedLogin = YES;
     [self.navigationController pushViewController:webVC animated:YES];
-    
 }
 
 

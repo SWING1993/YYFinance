@@ -20,14 +20,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.titleView.title = @"消息中心";
-
 }
 
 - (void)initSubviews {
     [super initSubviews];
     NSArray * list = @[@"系统公告",@"我的消息"];
     MLMSegmentHead *segHead = [[MLMSegmentHead alloc] initWithFrame:CGRectMake(0, kNaviHeigh, SCREEN_WIDTH, 40) titles:list headStyle:SegmentHeadStyleLine layoutStyle:MLMSegmentLayoutDefault];
-//    segHead.fontScale = .85;
     segHead.fontSize = 14;
     segHead.lineScale = .4;
     segHead.selectColor = kColorRed;
