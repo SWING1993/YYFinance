@@ -17,13 +17,13 @@
 // **************************************服务端******************************************
 #pragma mark -  服务端
 
-#define kBaseUrl             @"http://www.uyujf.com:8888"
-#define WEB_URL(url)         [@"https://www.uyujf.com/mobile" stringByAppendingString:url]
-#define RETURN_URL(url)      [@"https://www.uyujf.com/appSina/iosPageH5/" stringByAppendingString:url]
+//#define kBaseUrl             @"http://www.uyujf.com:8888"
+//#define WEB_URL(url)         [@"https://www.uyujf.com/mobile" stringByAppendingString:url]
+//#define RETURN_URL(url)      [@"https://www.uyujf.com/appSina/iosPageH5/" stringByAppendingString:url]
 
-//#define kBaseUrl             @"http://47.96.130.132:8080"
-//#define WEB_URL(url)         [@"http://test.uyujf.com/mobile" stringByAppendingString:url]
-//#define RETURN_URL(url)      [@"http://test.uyujf.com/appSina/iosPageH5/" stringByAppendingString:url]
+#define kBaseUrl             @"http://47.96.130.132:8080"
+#define WEB_URL(url)         [@"http://test.uyujf.com/mobile" stringByAppendingString:url]
+#define RETURN_URL(url)      [@"http://test.uyujf.com/appSina/iosPageH5/" stringByAppendingString:url]
 
 //弱引用/强引用
 #define YYWeakSelf(type)  __weak typeof(type) weak##type = type;
