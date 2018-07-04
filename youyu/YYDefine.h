@@ -238,7 +238,7 @@ extern NSString *const KEY_UM;
 /**
  *  微信appid
  */
-extern NSString *const KYE_WXAppId;
+extern NSString *const KEY_WXAppId;
 
 /**
  *  微信 Secret key

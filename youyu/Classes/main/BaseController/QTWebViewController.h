@@ -15,6 +15,8 @@
 
 - (void)target:(NSString *)info;
 
+- (void)goShare:(NSString *)json;
+
 - (NSString *)getUserInfo;
 
 @end

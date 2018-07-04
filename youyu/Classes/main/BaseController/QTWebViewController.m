@@ -12,6 +12,7 @@
 #import "QTBaseViewController+Activity.h"
 #import "UIViewController+Share.h"
 #import "YYFinanceController.h"
+#import <UShareUI/UShareUI.h>
 
 @implementation NativeAPIs
 
@@ -31,6 +32,37 @@
                                @"access_id":[GVUserDefaults  shareInstance].access_id?:@""};
     NSString *result = [userInfo mj_JSONString];
     return result;
+}
+
+- (void)goShare:(NSString *)json {
+    NSDictionary *jsonDict = [json mj_JSONObject];
+    NSString *title = jsonDict[@"title"]?:@"";
+    NSString *descr = jsonDict[@"des"]?:@"";
+    NSString *thumbURL = jsonDict[@"pic"]?:@"";
+    NSString *webpageUrl = jsonDict[@"url"]?:@"";
+    kDISPATCH_MAIN_THREAD((^{
+        
+        [UMSocialUIManager setPreDefinePlatforms:@[@(UMSocialPlatformType_Sina),@(UMSocialPlatformType_QQ),@(UMSocialPlatformType_WechatSession),@(UMSocialPlatformType_WechatTimeLine)]];
+        
+        [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
+            
+            UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
+            
+            UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:title descr:descr thumImage:thumbURL];
+            shareObject.webpageUrl = webpageUrl;
+            messageObject.shareObject = shareObject;
+            
+            [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:[AppDelegate presentingVC] completion:^(id data, NSError *error) {
+                if (error) {
+                    [QMUITips showInfo:@"分享失败"];
+                    NSLog(@"************Share fail with error %@*********",error);
+                }else{
+                    NSLog(@"response data is %@",data);
+                }
+            }];
+        }];
+    }));
+    
 }
 
 @end

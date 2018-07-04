@@ -71,11 +71,6 @@
 #import "DCodeGenerator.h"
 #import "DSandBox.h"
 
-
-/////// UMeng
-#import "UMessage.h"
-#import <UMMobClick/MobClick.h>
-
 ////new Register
 
 #import "HRLoginViewController.h"

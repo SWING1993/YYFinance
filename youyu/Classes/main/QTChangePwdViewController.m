@@ -7,7 +7,6 @@
 //
 
 #import "QTChangePwdViewController.h"
-#import "UMessage.h"
 
 @interface QTChangePwdViewController ()
 

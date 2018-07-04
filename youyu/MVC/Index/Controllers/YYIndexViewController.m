@@ -209,7 +209,8 @@
             
         case 1:{
             QTWebViewController *webVC = [[QTWebViewController alloc] init];
-            webVC.url = WEB_URL(@"/user_center/invite");
+//            webVC.url = WEB_URL(@"/user_center/invite");
+            webVC.url = @"http://192.168.50.13/mobile/finance/invitation";
             webVC.isNeedLogin = YES;
             [self.navigationController pushViewController:webVC animated:YES];
         }

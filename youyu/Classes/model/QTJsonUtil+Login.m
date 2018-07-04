@@ -12,7 +12,6 @@
 #import "MJExtension.h"
 #import "SystemConfigDefaults.h"
 #import "NSString+model.h"
-#import "UMessage.h"
 
 @implementation QTJsonUtil (other)
 
@@ -59,8 +58,8 @@
             }
         }];
 
-        [UMessage addTag:@"login" response:^(id responseObject, NSInteger remain, NSError *error) {}];
-        [UMessage removeTag:@"unlogin" response:^(id responseObject, NSInteger remain, NSError *error) {}];
+//        [UMessage addTag:@"login" response:^(id responseObject, NSInteger remain, NSError *error) {}];
+//        [UMessage removeTag:@"unlogin" response:^(id responseObject, NSInteger remain, NSError *error) {}];
 
         NOTICE_POST(NOTICEHOME);
 

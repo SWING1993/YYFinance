@@ -539,7 +539,6 @@
 		14F53B1C1C43558000A7894C /* QTJsonUtil+Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F53B1B1C43558000A7894C /* QTJsonUtil+Login.m */; };
 		18905E8E20C9345900B96B01 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18905E8920C9345800B96B01 /* libWeChatSDK.a */; };
 		18905E8F20C9345900B96B01 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 18905E8A20C9345800B96B01 /* README.txt */; };
-		18905E9D20C9359400B96B01 /* libUMessage_Sdk_1.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18905E9120C9358400B96B01 /* libUMessage_Sdk_1.4.0.a */; };
 		18905EA320C9359400B96B01 /* YYTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 18905E9C20C9359400B96B01 /* YYTimer.m */; };
 		18D7732320CF9D1100D710C2 /* YYFinanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D7732220CF9D1100D710C2 /* YYFinanceController.m */; };
 		18D7EE1020CFCFC4009C685A /* YYRequestApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D7EE0F20CFCFC4009C685A /* YYRequestApi.m */; };
@@ -1665,8 +1664,6 @@
 		18905E8B20C9345800B96B01 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
 		18905E8C20C9345800B96B01 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		18905E8D20C9345800B96B01 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
-		18905E9120C9358400B96B01 /* libUMessage_Sdk_1.4.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.4.0.a; sourceTree = "<group>"; };
-		18905E9220C9358400B96B01 /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
 		18905E9B20C9359400B96B01 /* YYTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTimer.h; sourceTree = "<group>"; };
 		18905E9C20C9359400B96B01 /* YYTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTimer.m; sourceTree = "<group>"; };
 		18D7732120CF9D1100D710C2 /* YYFinanceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYFinanceController.h; sourceTree = "<group>"; };
@@ -1973,7 +1970,6 @@
 				147F0F6F1B82C51E00D42039 /* CoreFoundation.framework in Frameworks */,
 				147F0F6D1B82C51300D42039 /* CFNetwork.framework in Frameworks */,
 				031FC11920E632760045F988 /* FUMobilePay.framework in Frameworks */,
-				18905E9D20C9359400B96B01 /* libUMessage_Sdk_1.4.0.a in Frameworks */,
 				14D802E91B6F571D007271E6 /* SystemConfiguration.framework in Frameworks */,
 				03997EDB20DB58AD00A12095 /* HelpDesk.framework in Frameworks */,
 				92A761EC1FC54A57004D5503 /* libc++.1.tbd in Frameworks */,
@@ -3873,7 +3869,6 @@
 				141CEFA91C10255B0045400D /* DSWSDK */,
 				18FB697120CA8D4A008CC7F9 /* LTNavigationBar */,
 				18905E9A20C9359400B96B01 /* timer */,
-				18905E9020C9358400B96B01 /* UMessage_Sdk_1.4.0 */,
 				18905E8820C9345800B96B01 /* OpenSDK1.7.5 */,
 			);
 			path = Vendor;
@@ -4367,15 +4362,6 @@
 				18905E8D20C9345800B96B01 /* WXApiObject.h */,
 			);
 			path = OpenSDK1.7.5;
-			sourceTree = "<group>";
-		};
-		18905E9020C9358400B96B01 /* UMessage_Sdk_1.4.0 */ = {
-			isa = PBXGroup;
-			children = (
-				18905E9120C9358400B96B01 /* libUMessage_Sdk_1.4.0.a */,
-				18905E9220C9358400B96B01 /* UMessage.h */,
-			);
-			path = UMessage_Sdk_1.4.0;
 			sourceTree = "<group>";
 		};
 		18905E9A20C9359400B96B01 /* timer */ = {
@@ -6066,6 +6052,7 @@
 					"$(PROJECT_DIR)/youyu/Vendor/FUMobilePay",
 				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/youyu/QTPrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
@@ -6086,8 +6073,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/youyu/Vendor/OpenSDK1.7.5",
-					"$(PROJECT_DIR)/youyu/Vendor/UMessage_Sdk_1.4.0",
-					"$(PROJECT_DIR)/youyu/Vendor/LLPaySDK_V2.6.6",
 					"$(PROJECT_DIR)/youyu/Vendor/HelpDesk1.1.9/HelpDeskUI/HDUIKit/3rdparty/DeviceHelper/HDVoiceConvert/opencore-amrwb",
 					"$(PROJECT_DIR)/youyu/Vendor/HelpDesk1.1.9/HelpDeskUI/HDUIKit/3rdparty/DeviceHelper/HDVoiceConvert/opencore-amrnb",
 				);
@@ -6109,7 +6094,7 @@
 					"\"UIKit\"",
 					"-lxml2",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.youyu.com.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youyu.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -6141,6 +6126,7 @@
 					"$(PROJECT_DIR)/youyu/Vendor/FUMobilePay",
 				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/youyu/QTPrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
@@ -6161,8 +6147,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/youyu/Vendor/OpenSDK1.7.5",
-					"$(PROJECT_DIR)/youyu/Vendor/UMessage_Sdk_1.4.0",
-					"$(PROJECT_DIR)/youyu/Vendor/LLPaySDK_V2.6.6",
 					"$(PROJECT_DIR)/youyu/Vendor/HelpDesk1.1.9/HelpDeskUI/HDUIKit/3rdparty/DeviceHelper/HDVoiceConvert/opencore-amrwb",
 					"$(PROJECT_DIR)/youyu/Vendor/HelpDesk1.1.9/HelpDeskUI/HDUIKit/3rdparty/DeviceHelper/HDVoiceConvert/opencore-amrnb",
 				);
@@ -6184,7 +6168,7 @@
 					"\"UIKit\"",
 					"-lxml2",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.youyu.com.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youyu.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

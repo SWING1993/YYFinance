@@ -65,10 +65,14 @@ NSString *const kStoreAppId = @"1320737614";
 
 NSString *const KEY_UM = @"5a2a0024b27b0a50bf0001d6";
 
-NSString *const KYE_WXAppId = @"wx4ef28b0207a6be04";
+NSString *const KEY_WXAppId = @"wx4ef28b0207a6be04";
 
 NSString *const KEY_WXSecret = @"1bf7629b836db683b2f98d55e593a0b2";
 
 NSString *const KEY_QQAPPId = @"1106548439";
 
 NSString *const KEY_QQSecret = @"JycsWRXHY9c10UyU";
+
+NSString *const KEY_SinaAPPId = @"1638159462";
+
+NSString *const KEY_SinaSecret = @"79e6fcbff46cedaab1d4d7f6a993c311";

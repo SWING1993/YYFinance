@@ -33,22 +33,28 @@
     [self registerUserNotification];
     
     // 友盟统计
-    UMConfigInstance.appKey = KEY_UM;
-    [MobClick setAppVersion:XcodeAppVersion];
-    [MobClick startWithConfigure:UMConfigInstance];
-    [MobClick setEncryptEnabled:YES];
-    [MobClick setLogEnabled:NO];
-    
-    // 友盟分享
-    [[UMSocialManager defaultManager] setUmSocialAppkey:KEY_UM];
-    // WX
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:KYE_WXAppId appSecret:KEY_WXSecret redirectURL:nil];
-    // QQ
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:KEY_QQAPPId/*设置QQ平台的appID*/  appSecret:KEY_QQSecret redirectURL:@"http://mobile.umeng.com/social"];
+//    UMConfigInstance.appKey = KEY_UM;
+//    [MobClick setAppVersion:XcodeAppVersion];
+//    [MobClick startWithConfigure:UMConfigInstance];
+//    [MobClick setEncryptEnabled:YES];
+//    [MobClick setLogEnabled:NO];
     
     // 友盟推送
-    [UMessage startWithAppkey:KEY_UM launchOptions:launchOptions];
-    [UMessage registerForRemoteNotifications];
+    //    [UMessage startWithAppkey:KEY_UM launchOptions:launchOptions];
+    //    [UMessage registerForRemoteNotifications];
+    
+    
+    // 打开日志，方便调试
+    //    [UMessage setLogEnabled:YES];
+    //    if ([GVUserDefaults  shareInstance].isLogin) {
+    //        [UMessage addTag:@"login" response:^(id responseObject, NSInteger remain, NSError *error) {}];
+    //        [UMessage removeTag:@"unlogin" response:^(id responseObject, NSInteger remain, NSError *error) {}];
+    //    } else {
+    //        [UMessage addTag:@"unlogin" response:^(id responseObject, NSInteger remain, NSError *error) {}];
+    //        [UMessage removeTag:@"login" response:^(id responseObject, NSInteger remain, NSError *error) {}];
+    //    }
+    
+    [self configUSharePlatforms];
     
     // iOS10必须加下面这段代码。
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
@@ -63,17 +69,7 @@
             // 这里可以添加一些自己的逻辑
         }
     }];
-    
-    // 打开日志，方便调试
-    [UMessage setLogEnabled:YES];
-    if ([GVUserDefaults  shareInstance].isLogin) {
-        [UMessage addTag:@"login" response:^(id responseObject, NSInteger remain, NSError *error) {}];
-        [UMessage removeTag:@"unlogin" response:^(id responseObject, NSInteger remain, NSError *error) {}];
-    } else {
-        [UMessage addTag:@"unlogin" response:^(id responseObject, NSInteger remain, NSError *error) {}];
-        [UMessage removeTag:@"login" response:^(id responseObject, NSInteger remain, NSError *error) {}];
-    }
-    
+
     
     // 环信客服
     [[HDEmotionEscape sharedInstance] setEaseEmotionEscapePattern:@"\\[[^\\[\\]]{1,3}\\]"];
@@ -123,6 +119,32 @@
         [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
     }
 }
+
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
+    if (!result) {
+        // 其他如支付等SDK的回调
+    }
+    return result;
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url];
+    if (!result) {
+        // 其他如支付等SDK的回调
+    }
+    return result;
+}
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
+    BOOL result = [[UMSocialManager defaultManager]  handleOpenURL:url options:options];
+    if (!result) {
+        // 其他如支付等SDK的回调
+    }
+    return result;
+}
+
 
 #pragma mark - 将得到的deviceToken传给SDK
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
@@ -373,6 +395,19 @@
 -(void)xhLaunchShowFinish:(XHLaunchAd *)launchAd {
 }
 
-
+- (void)configUSharePlatforms {
+    // 友盟分享
+    [[UMSocialManager defaultManager] setUmSocialAppkey:KEY_UM];
+    // WX
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:KEY_WXAppId appSecret:KEY_WXSecret redirectURL:@"http://mobile.umeng.com/social"];
+    // QQ
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:KEY_QQAPPId appSecret:KEY_QQSecret redirectURL:@"http://mobile.umeng.com/social"];
+    // Weibo
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:KEY_SinaAPPId appSecret:KEY_SinaSecret redirectURL:@"https://sns.whalecloud.com/sina2/callback"];
+    
+    // 移除相应平台的分享，如微信收藏
+    [[UMSocialManager defaultManager] removePlatformProviderWithPlatformTypes:@[@(UMSocialPlatformType_WechatFavorite)]];
+    
+}
 
 @end

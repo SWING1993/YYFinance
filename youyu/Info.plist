@@ -27,6 +27,8 @@
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>qq</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>QQ41f496d7</string>
@@ -35,6 +37,8 @@
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>qq</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>tencent1106548439</string>
@@ -58,6 +62,16 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>wx4ef28b0207a6be04</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>weibo</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wb1638159462</string>
 			</array>
 		</dict>
 	</array>

@@ -9,7 +9,6 @@
 #import "UIViewController+page.h"
 #import "WMPageController.h"
 #import "SystemConfigDefaults.h"
-#import "UMessage.h"
 #import "QTChangePwdViewController.h"
 #import "QTRecordViewController.h"
 #import "QTBankViewController.h"
@@ -533,10 +532,10 @@
 }
 
 - (void)setUnLogin {
-    [UMessage removeAlias:[GVUserDefaults  shareInstance].phone type:@"QTYD" response:nil];
-    [[GVUserDefaults shareInstance] saveLocal];
-    [UMessage addTag:@"unlogin" response:^(id responseObject, NSInteger remain, NSError *error) {}];
-    [UMessage removeTag:@"login" response:^(id responseObject, NSInteger remain, NSError *error) {}];
+//    [UMessage removeAlias:[GVUserDefaults  shareInstance].phone type:@"QTYD" response:nil];
+//    [[GVUserDefaults shareInstance] saveLocal];
+//    [UMessage addTag:@"unlogin" response:^(id responseObject, NSInteger remain, NSError *error) {}];
+//    [UMessage removeTag:@"login" response:^(id responseObject, NSInteger remain, NSError *error) {}];
 }
 
 - (void)toLogin {
