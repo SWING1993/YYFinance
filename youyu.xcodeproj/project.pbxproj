@@ -3966,6 +3966,8 @@
 				039A4F7920E09F500030076D /* YYDefine.m */,
 				149FC3321B54FC5E00274875 /* AppDelegate.h */,
 				149FC3331B54FC5E00274875 /* AppDelegate.m */,
+				03997ECC20DB4B5100A12095 /* AppDelegate+Config.h */,
+				03997ECD20DB4B5100A12095 /* AppDelegate+Config.m */,
 				18FB696620CA7E9A008CC7F9 /* MVC */,
 				1459781D1B550C840071A82A /* Base */,
 				1459781E1B550CCB0071A82A /* Main */,
@@ -4431,8 +4433,6 @@
 		18FA41CC20CE49E500F10DDF /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				03997ECC20DB4B5100A12095 /* AppDelegate+Config.h */,
-				03997ECD20DB4B5100A12095 /* AppDelegate+Config.m */,
 				031FC11C20E6387E0045F988 /* NSObject+Error.h */,
 				031FC11D20E6387E0045F988 /* NSObject+Error.m */,
 				031A5AEF20D3990100E0AF88 /* NSDate+Extension.h */,

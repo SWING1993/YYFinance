@@ -54,9 +54,10 @@
             
             [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:[AppDelegate presentingVC] completion:^(id data, NSError *error) {
                 if (error) {
-                    [QMUITips showInfo:@"分享失败"];
-                    NSLog(@"************Share fail with error %@*********",error);
+                    [QMUITips showInfo:[NSString stringWithFormat:@"分享失败 %@",error.userInfo[@"message"]]];
+                    NSLog(@"************分享失败 %@*********",error);
                 }else{
+                    [QMUITips showSucceed:@"分享成功"];
                     NSLog(@"response data is %@",data);
                 }
             }];

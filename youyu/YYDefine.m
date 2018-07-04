@@ -10,10 +10,6 @@
 
 #pragma mark - 服务端
 
-//NSString *const ACCESS_ID = @"hsdad20170410170596ac0342A3ccf95";
-//
-//NSString *const ACCESS_KEY = @"hsdad2017041016050DhkYjIwMmI1OwY3MjExOGNmMmZ";
-
 NSString *const ACCESS_ID = @"uyujf20171110170798bg0644A3bvg95";
 
 NSString *const ACCESS_KEY = @"uyujf2017111017240BjkRkOwMmP1OwB3NjTxOGNmMnZ";
