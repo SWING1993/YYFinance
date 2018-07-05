@@ -65,9 +65,9 @@ NSString *const KEY_WXAppId = @"wx022beaaf365e066d";
 
 NSString *const KEY_WXSecret = @"03c39df4fcc3df5481f359f4ad9c18a9";
 
-NSString *const KEY_QQAPPId = @"1106612090";
+NSString *const KEY_QQAPPId = @"1106548439";
 
-NSString *const KEY_QQSecret = @"SOjwrj9Ao6wMKp33";
+NSString *const KEY_QQSecret = @"JycsWRXHY9c10UyU";
 
 NSString *const KEY_SinaAPPId = @"1638159462";
 
