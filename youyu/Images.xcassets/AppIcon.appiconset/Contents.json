@@ -3,55 +3,55 @@
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "91526543553_.pic_hdiPhoneNotification_20pt@2x.png",
+      "filename" : "logo40.png",
       "scale" : "2x"
     },
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "91526543553_.pic_hdiPhoneNotification_20pt@3x.png",
+      "filename" : "logo60.png",
       "scale" : "3x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "91526543553_.pic_hdiPhoneSpootlight5_29pt@2x.png",
+      "filename" : "logo58.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "91526543553_.pic_hdiPhoneSpootlight5_29pt@3x.png",
+      "filename" : "logo87.png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "91526543553_.pic_hdiPhoneSpootlight7_40pt@2x.png",
+      "filename" : "logo80.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "91526543553_.pic_hdiPhoneSpootlight7_40pt@3x.png",
+      "filename" : "logo120.png",
       "scale" : "3x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "91526543553_.pic_hdiPhoneApp_60pt@2x.png",
+      "filename" : "logo120-1.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "91526543553_.pic_hdiPhoneApp_60pt@3x.png",
+      "filename" : "logo180.png",
       "scale" : "3x"
     },
     {
       "size" : "1024x1024",
       "idiom" : "ios-marketing",
-      "filename" : "91526543553_.pic_hdstore_1024pt.png",
+      "filename" : "logo1024.png",
       "scale" : "1x"
     }
   ],
