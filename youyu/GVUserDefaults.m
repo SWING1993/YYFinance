@@ -16,6 +16,17 @@
 static GVUserDefaults *sharedInstance = nil;
 @implementation GVUserDefaults
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        GVUserDefaults *temp = [NSKeyedUnarchiver unarchiveObjectWithFile:DATA_FILE_PATH];
+        if (temp.mj_keyValues) {
+            [self mj_setKeyValues:temp.mj_keyValues];
+        }
+    }
+    return self;
+}
+
 + (instancetype)shareInstance {
     if (!sharedInstance) {
         sharedInstance = [[GVUserDefaults alloc] init];
@@ -34,18 +45,7 @@ static GVUserDefaults *sharedInstance = nil;
     [self saveLocal];
 }
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        GVUserDefaults *temp = [NSKeyedUnarchiver unarchiveObjectWithFile:DATA_FILE_PATH];
-        if (temp.mj_keyValues) {
-            [self mj_setKeyValues:temp.mj_keyValues];
-        }
-    }
-    return self;
-}
-
--(BOOL)isLogin {
+- (BOOL)isLogin {
     return !kStringIsEmpty(self.user_id);
 }
 

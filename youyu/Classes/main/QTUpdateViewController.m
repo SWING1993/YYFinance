@@ -32,8 +32,6 @@
         time = [NSTimer timerExecuteCountPerSecond:offtime done:^(NSInteger vlaue) {
                 if (vlaue == 0) {
                     self.view.hidden=YES;
-
-                    NOTICE_POST(NOTICEHOME);
                     [time invalidate];
                 } else {
                     self.view.hidden=NO;

@@ -53,7 +53,7 @@
 /**
  *  新浪账户账号
  */
-@property (nonatomic, strong) NSString *sina_uid;
+//@property (nonatomic, strong) NSString *sina_uid;
 
 /**
  *  用户Id

@@ -47,8 +47,6 @@ NSInteger const MY_TAG = 3;
 
 #pragma mark - notice
 
-NSString *const NOTICEHOME = @"homeRefesh";
-
 NSString *const NOTICEBANK = @"bankRefesh";
 
 NSString *const NOTICEORDER = @"orderRefesh";

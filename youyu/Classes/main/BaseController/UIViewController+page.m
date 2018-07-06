@@ -73,7 +73,6 @@
 #pragma mark - tab
 
 - (void)toHome {
-    NOTICE_POST(NOTICEHOME);
     self.navigationController.tabBarController.selectedIndex = HOME_TAG;
     [self.navigationController popToRootViewControllerAnimated:YES];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"Logout" object:nil];
@@ -231,9 +230,7 @@
 
 - (void)toMallComment:(NSString *)oid {
     QTCommentViewController *controller = [QTCommentViewController controllerFromXib];
-    
     controller.orderID = oid;
-    
     [self.navigationController pushViewController:controller animated:YES];
 }
 
@@ -264,48 +261,19 @@
 // 提现
 - (void)toWithdrew {
     UIViewController *controller = [QTSinaWithdrewViewController controllerFromXib];
-
     [self.navigationController pushViewController:controller animated:YES];
 }
 
 // 银行卡
 - (void)toBank {
     UIViewController *controller = [QTBankViewController controllerFromXib];
-
     [self.navigationController pushViewController:controller animated:YES];
 }
 
 //  投资记录
 - (void)toInvestRecord {
-    
     YYInvestRecordController *controller = [[YYInvestRecordController alloc] init];
     [self.navigationController pushViewController:controller animated:YES];
-    
-    /*
-    QTInvestRecordViewController *controller1 = [QTInvestRecordViewController controllerFromXib];
-    controller1.segment = 0;
-   
-    QTInvestRecordViewController *controller2 = [QTInvestRecordViewController controllerFromXib];
-    controller2.segment = 1;
-
-    QTInvestRecordViewController *controller3 = [QTInvestRecordViewController controllerFromXib];
-    controller3.segment = 2;
-
-    QTInvestRecordViewController *controller4 = [QTInvestRecordViewController controllerFromXib];
-    controller4.segment = 3;
-
-    NSArray *controllers = @[controller1, controller2, controller3, controller4];
-    NSArray *titles = @[@"全部", @"履约中", @"已回款", @"未成功"];
-
-    QTPageViewController *pageController = [[QTPageViewController alloc]initWithViewControllerClasses:controllers andTheirTitles:titles];
-    pageController.type = 1;
-    [QTTheme pageWMControlStyle:pageController];
-    pageController.menuItemWidth = APP_WIDTH / 4;
-
-    pageController.titleView.title = @"投资记录";
-
-    [self.navigationController pushViewController:pageController animated:YES];
-     */
 }
 
 //  交易记录
@@ -531,15 +499,8 @@
     }
 }
 
-- (void)setUnLogin {
-//    [UMessage removeAlias:[GVUserDefaults  shareInstance].phone type:@"QTYD" response:nil];
-//    [[GVUserDefaults shareInstance] saveLocal];
-//    [UMessage addTag:@"unlogin" response:^(id responseObject, NSInteger remain, NSError *error) {}];
-//    [UMessage removeTag:@"login" response:^(id responseObject, NSInteger remain, NSError *error) {}];
-}
 
 - (void)toLogin {
-//    USER_DATA.isLogin = NO;
     QTloginViewController *controller = [QTloginViewController controllerFromXib];
     controller.isBackHome = YES;
     [self.navigationController pushViewController:controller animated:YES];
@@ -571,11 +532,9 @@
 }
 
 - (void)loginToAccount {
-    [self setUnLogin];
     [GVUserDefaults  shareInstance].pswDes = @"";
     [[GVUserDefaults  shareInstance] saveLocal];
     [self login:^(QTloginViewController *controller) {
-        [self setUnLogin];
         controller.isLoginedToAccout = YES;
         controller.isBackHome = YES;
         controller.isBackToSecondPage = NO;
@@ -584,7 +543,6 @@
 
 - (void)loginTimeout {
     [self login:^(QTloginViewController *controller) {
-        [self setUnLogin];
         controller.isLoginedToAccout = NO;
         controller.isBackHome = YES;
         controller.isBackToSecondPage = NO;
@@ -593,11 +551,9 @@
 
 // 重新登陆 删除密码
 - (void)relogin {
-    [self setUnLogin];
     [GVUserDefaults  shareInstance].pswDes = @"";
     [[GVUserDefaults  shareInstance] saveLocal];
     [self login:^(QTloginViewController *controller) {
-        [self setUnLogin];
         controller.isBackToSecondPage = YES;
         controller.isLoginedToAccout = NO;
         controller.isBackHome = NO;
@@ -606,18 +562,21 @@
 
 // 安全退出
 - (void)logout {
+
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"kLocalUserName"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"kLocalPassword"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     NSMutableArray *userlist = [[NSMutableArray alloc] initWithArray:SYSTEM_CONFIG.userList];
     SYSTEM_CONFIG.userList = userlist;
-    [self setUnLogin];
-    [GVUserDefaults  shareInstance].pswDes = @"";
+    [GVUserDefaults shareInstance].pswDes = @"";
     [GVUserDefaults shareInstance].phone = @"";
-    [[GVUserDefaults  shareInstance] saveLocal];
-    [[GVUserDefaults  shareInstance] clear];
+    [[GVUserDefaults shareInstance] saveLocal];
+    [[GVUserDefaults shareInstance] clear];
     [self showToast:@"已安全退出" done:^{
         self.navigationController.tabBarController.selectedIndex = HOME_TAG;
         [self.navigationController popToRootViewControllerAnimated:YES];
     }];
-    NOTICE_POST(NOTICEHOME);
     //更改首页导航条右侧按钮
     NOTICE_POST(@"Logout");
 }

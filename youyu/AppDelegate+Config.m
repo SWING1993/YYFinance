@@ -97,6 +97,7 @@
     [agent setValue:acceptableContentTypes forKeyPath:keypath];
     
     [self customizeAppearance];
+    [self autoLoginAction];
 }
 
 #pragma mark - 注册推送通知
@@ -408,6 +409,56 @@
     // 移除相应平台的分享，如微信收藏
     [[UMSocialManager defaultManager] removePlatformProviderWithPlatformTypes:@[@(UMSocialPlatformType_WechatFavorite)]];
     
+}
+
+- (void)autoLoginAction {
+    
+    if (![GVUserDefaults shareInstance].isLogin) {
+        return;
+    }
+    
+    NSString *username = [[NSUserDefaults standardUserDefaults] valueForKey:@"kLocalUserName"];
+    NSString *password = [[NSUserDefaults standardUserDefaults] valueForKey:@"kLocalPassword"];
+
+    if (!kStringIsEmpty(username) && !kStringIsEmpty(password)) {
+        
+        
+        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+        
+        dic[@"user_name"] = username;
+        dic[@"password"] = password;
+        dic[@"device_id"] = [AppUtil getOpenUDID];
+        dic[@"device_name"] = [AppUtil getDeviceName];
+        dic[@"login_type"] = @"1";
+        dic[@"client_system_version"] = [NSString stringWithFormat:@"iOS %@", [[UIDevice currentDevice] systemVersion]];
+        dic[@"client_resolution"] = [AppUtil getResolution];
+        dic[@"app_version"] = [AppUtil getAPPVersion];
+        dic[@"client_name"] = [AppUtil getDeviceName];
+        dic[@"client_network"] = [AppUtil getNetWorkStates];
+        dic[@"client_udid"] = [AppUtil getOpenUDID];
+        dic[@"login_area"] = [IPHelper deviceIPAdress];
+        dic[@"client_time"] = @(@([NSDate systemDate].timeIntervalSince1970).integerValue);
+        [[GVUserDefaults shareInstance] clear];
+
+        YYRequestApi *api = [[YYRequestApi alloc] initWithPostTaskUrl:@"user_login" requestArgument:dic];
+        [api startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+            NSDictionary *resultDict = (NSDictionary *)request.responseObject;
+            if (resultDict.code == 100000) {
+                if (resultDict.content.allKeys > 0) {
+                    [[GVUserDefaults shareInstance] clear];
+                    [[GVUserDefaults shareInstance] mj_setKeyValues:resultDict.content];
+                    // 解密
+                    [GVUserDefaults  shareInstance].email = [[[GVUserDefaults  shareInstance].email stringValue] dnValue];
+                    [GVUserDefaults  shareInstance].card_id = [[[GVUserDefaults  shareInstance].card_id stringValue] dnValue];
+                    [GVUserDefaults  shareInstance].pswDes = password;
+                    [[GVUserDefaults shareInstance] saveLocal];
+                }
+            }
+        } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+            
+        }];
+    }
+  
 }
 
 @end

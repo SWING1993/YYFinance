@@ -214,8 +214,6 @@ extern NSString *const LOGIN_TIP;
 
 #pragma mark - notic
 
-extern NSString *const NOTICEHOME;
-
 extern NSString *const NOTICEBANK;
 
 extern NSString *const NOTICEORDER;
