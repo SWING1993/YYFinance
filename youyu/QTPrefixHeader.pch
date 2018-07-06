@@ -10,9 +10,10 @@
 #define QTPrefixHeader_pch
 
 
-#import "QTWebViewController.h"
+//#import "QTWebViewController.h"
 #import "YYBaseTableViewController.h"
 #import "YYBaseViewController.h"
+#import "YYWebViewController.h"
 
 // 框架
 //环信客服

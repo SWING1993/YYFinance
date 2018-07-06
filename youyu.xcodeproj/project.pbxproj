@@ -177,6 +177,7 @@
 		03997EDC20DB58AD00A12095 /* HelpDesk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03997ED920DB589F00A12095 /* HelpDesk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		03997FD420DB88CF00A12095 /* QMUIConfigurationTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03997FD320DB88CF00A12095 /* QMUIConfigurationTemplate.m */; };
 		0399B14A20E9DA32006A4634 /* YYInvestRecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0399B14920E9DA32006A4634 /* YYInvestRecordController.m */; };
+		0399B15220EF3CE3006A4634 /* YYWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0399B15120EF3CE3006A4634 /* YYWebViewController.m */; };
 		039A4F7620DCFDA20030076D /* newtip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 039A4F7420DCFDA10030076D /* newtip@2x.png */; };
 		039A4F7720DCFDA20030076D /* newtip@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 039A4F7520DCFDA10030076D /* newtip@3x.png */; };
 		039A4F7A20E09F500030076D /* YYDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 039A4F7920E09F500030076D /* YYDefine.m */; };
@@ -1048,6 +1049,8 @@
 		03997FD320DB88CF00A12095 /* QMUIConfigurationTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMUIConfigurationTemplate.m; sourceTree = "<group>"; };
 		0399B14820E9DA32006A4634 /* YYInvestRecordController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYInvestRecordController.h; sourceTree = "<group>"; };
 		0399B14920E9DA32006A4634 /* YYInvestRecordController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYInvestRecordController.m; sourceTree = "<group>"; };
+		0399B15020EF3CE3006A4634 /* YYWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYWebViewController.h; sourceTree = "<group>"; };
+		0399B15120EF3CE3006A4634 /* YYWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYWebViewController.m; sourceTree = "<group>"; };
 		039A4F6F20DCEEF40030076D /* Hyphenate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Hyphenate.framework; sourceTree = "<group>"; };
 		039A4F7420DCFDA10030076D /* newtip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newtip@2x.png"; sourceTree = "<group>"; };
 		039A4F7520DCFDA10030076D /* newtip@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newtip@3x.png"; sourceTree = "<group>"; };
@@ -3215,6 +3218,8 @@
 				031A5AE220D2466200E0AF88 /* YYBaseViewController.m */,
 				031A5AE420D2469300E0AF88 /* YYBaseTableViewController.h */,
 				031A5AE520D2469300E0AF88 /* YYBaseTableViewController.m */,
+				0399B15020EF3CE3006A4634 /* YYWebViewController.h */,
+				0399B15120EF3CE3006A4634 /* YYWebViewController.m */,
 				18FB696420CA7874008CC7F9 /* MainTabBarController.h */,
 				18FB696320CA7874008CC7F9 /* MainTabBarController.m */,
 				03997FD220DB88CE00A12095 /* QMUIConfigurationTemplate.h */,
@@ -5631,6 +5636,7 @@
 				0339104820D8EA6F00F33055 /* HDMessageCell.m in Sources */,
 				FEED04D81F2859E300CA5C39 /* CoreArchive.m in Sources */,
 				033910EE20D8EF7000F33055 /* PSTCollectionViewFlowLayout.m in Sources */,
+				0399B15220EF3CE3006A4634 /* YYWebViewController.m in Sources */,
 				0339110320D8EF7000F33055 /* EMSDWebImageManager.m in Sources */,
 				141CF1361C10255B0045400D /* DGridView.m in Sources */,
 				14068BC81D4B577E00AD54FE /* QTExchangeListCell.m in Sources */,

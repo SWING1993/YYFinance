@@ -14,6 +14,7 @@
 #import "YYBorrowModel.h"
 #import "YYIndexCell.h"
 #import "QTInvestDetailViewController.h"
+#import "YYWebViewController.h"
 
 #define NAVBAR_CHANGE_POINT 50
 
@@ -189,8 +190,7 @@
 
 - (void)webViewActionWithHref:(NSString *)href {
     if (!href.isEmptyString) {
-        QTWebViewController *webVC = [[QTWebViewController alloc] init];
-        webVC.url = [href hasPrefix:@"http"] ? href : WEB_URL(href);
+        YYWebViewController *webVC = [[YYWebViewController alloc] initWithUrlStr:href];
         [self.navigationController pushViewController:webVC animated:YES];
     }
 }
@@ -208,11 +208,7 @@
             break;
             
         case 1:{
-            QTWebViewController *webVC = [[QTWebViewController alloc] init];
-//            webVC.url = WEB_URL(@"/user_center/invite");
-            webVC.url = @"http://192.168.50.13/mobile/finance/invitation";
-            webVC.isNeedLogin = YES;
-            [self.navigationController pushViewController:webVC animated:YES];
+            [self webViewActionWithHref:@"http://192.168.50.14/mobile/finance/invitation"];
         }
             break;
             

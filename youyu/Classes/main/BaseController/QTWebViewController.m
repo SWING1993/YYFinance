@@ -8,7 +8,6 @@
 
 #import "QTWebViewController.h"
 #import "UIViewController+BackButtonHandler.h"
-#import "MJRefresh.h"
 #import "QTBaseViewController+Activity.h"
 #import "UIViewController+Share.h"
 #import "YYFinanceController.h"
@@ -96,13 +95,6 @@
         }
     }
     
-//    MJRefreshStateHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-//        [self loadData];
-//    }];
-//    header.lastUpdatedTimeLabel.hidden = YES;
-//    header.stateLabel.hidden = YES;
-//    self.webView.scrollView.mj_header = header;
-    
     self.webView.delegate = self;
     [self.view addSubview:self.webView];
 }
@@ -121,7 +113,6 @@
 }
 
 - (void)loadData {
-    [self.webView.scrollView.mj_header endRefreshing];
     if (!kStringIsEmpty(self.url)) {
         NSMutableDictionary *dicPara = [NSMutableDictionary dictionary];
         if (self.isNeedLogin) {

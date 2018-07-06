@@ -147,12 +147,9 @@
 
 - (void)handleDisclosureIndicatorCellEvent:(QMUIStaticTableViewCellData *)cellData {
     YYMessageModel * model = self.dataSource[cellData.indexPath.section];
-    QTWebViewController *webVC = [[QTWebViewController alloc] init];
-    NSString *uri = [NSString stringWithFormat:@"/finance/notice_detail/type_id/%@/id/%@",self.type_id,model.id];
-    webVC.url = WEB_URL(uri);
-    webVC.isNeedLogin = YES;
+    NSString *urlStr = [NSString stringWithFormat:@"/finance/notice_detail/type_id/%@/id/%@",self.type_id,model.id];
+    YYWebViewController *webVC = [[YYWebViewController alloc] initWithUrlStr:urlStr];
     [self.navigationController pushViewController:webVC animated:YES];
 }
-
 
 @end

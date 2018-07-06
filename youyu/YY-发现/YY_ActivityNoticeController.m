@@ -57,7 +57,6 @@
     NSDictionary *dic = self.tableDataArray[indexPath.row][@"article_info"];
     QTWebViewController *webVC = [QTWebViewController controllerFromXib];
     NSString *url = WEB_URL(@"/article/article_detail_app/news/").add(dic.str(@"id"));
-//    webVC.htmlContent = dic[@"content"];
     webVC.url = url;
     [self.navigationController pushViewController:webVC animated:YES];
 }

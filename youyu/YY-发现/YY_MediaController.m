@@ -58,7 +58,6 @@ static CGFloat  heightMargin = 33;
     QTWebViewController *webVC = [QTWebViewController controllerFromXib];
     NSString *url = WEB_URL(@"/article/article_detail_app/media/").add(dic.str(@"id"));
     webVC.url = url;
-//    webVC.htmlContent = dic[@"content"];
     [self.navigationController pushViewController:webVC animated:YES];
 }
 

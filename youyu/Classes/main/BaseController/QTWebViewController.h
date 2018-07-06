@@ -43,9 +43,6 @@
 
 @property (nonatomic, assign) BOOL showShareBtn;
 
-//@property (nonatomic , assign) BOOL backAccount;
-//@property (nonatomic , assign) BOOL backInvest;
-
 @property (nonatomic,copy) NSString *shareContent;
 
 @property (nonatomic,assign) CGFloat cutHeight;//视图需要减少的高度

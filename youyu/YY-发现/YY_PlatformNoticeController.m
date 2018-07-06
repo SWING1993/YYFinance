@@ -56,7 +56,6 @@
     QTWebViewController *webVC = [QTWebViewController controllerFromXib];
     NSString *url = WEB_URL(@"/article/article_detail_app/notice/").add(dic.str(@"id"));
     webVC.url = url;
-//    webVC.htmlContent = dic[@"content"];
     [self.navigationController pushViewController:webVC animated:YES];
 }
 

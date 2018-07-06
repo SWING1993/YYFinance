@@ -231,14 +231,6 @@
 
         webController.url = [NSString stringWithFormat:@"%@%@", WEB_URL(@"/amaze/detail/"), self.borrow_id].add(@".html");
         [webController loadData];
-
-//        if (self.borrowInfo[@"content"]) {
-//            webController.htmlContent = self.borrowInfo[@"content"];
-//            [webController loadData];
-//        }else if (!webController.url) {
-//            webController.url = [NSString stringWithFormat:@"%@%@", WEB_URL(@"/amaze/detail/"), self.borrow_id].add(@".html");
-//            [webController loadData];
-//        }
     } else {
         imageTipView.hidden = YES;
         sender.scrollEnabled = YES;

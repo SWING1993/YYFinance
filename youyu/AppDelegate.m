@@ -133,8 +133,7 @@
 }
 
 + (void)toWebViewControllerWithUrl:(NSString *)url {
-    QTWebViewController *webVC = [[QTWebViewController alloc] init];
-    webVC.url = [url hasPrefix:@"http"] ? url : WEB_URL(url);
+    YYWebViewController *webVC = [[YYWebViewController alloc] initWithUrlStr:url];
     [AppDelegate pushVC:webVC];
 }
 

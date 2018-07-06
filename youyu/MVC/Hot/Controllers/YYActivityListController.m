@@ -146,10 +146,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    QTWebViewController *webVC = [[QTWebViewController alloc] init];
     YYMediaModel *model = self.dataSource[indexPath.section];
-    NSString *url = [WEB_URL(@"/article/article_detail_app/news/") stringByAppendingFormat:@"%@",model.id];
-    webVC.url = url;
+    NSString *urlStr = [WEB_URL(@"/article/article_detail_app/news/") stringByAppendingFormat:@"%@",model.id];
+    YYWebViewController *webVC = [[YYWebViewController alloc] initWithUrlStr:urlStr];
     [self.navigationController pushViewController:webVC animated:YES];
 }
 @end
