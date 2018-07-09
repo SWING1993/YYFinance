@@ -214,8 +214,6 @@
         DAlertViewController *alert = [DAlertViewController alertControllerWithTitle:@"提示" message:@"请您先登录再操作"];
         [alert addActionWithTitle:@"取消" handler:^(CKAlertAction *action) {
             [self toHome];
-            //更改首页导航条右侧按钮
-            NOTICE_POST(@"Logout");
         }];
         [alert addActionWithTitle:@"登录" handler:^(CKAlertAction *action) {
             [self toLogin];

@@ -40,7 +40,7 @@
 }
 
 - (void)refreshData {
-    self.tableDataArray = SYSTEM_CONFIG.userList;
+    self.tableDataArray = [SystemConfigDefaults sharedInstance].userList;
     [self.tableView reloadData];
 }
 

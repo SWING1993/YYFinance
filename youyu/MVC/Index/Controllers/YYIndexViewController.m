@@ -203,12 +203,12 @@
 - (void)clickedIndex:(UIButton *)btn {
     switch (btn.tag) {
         case 0:{
-            [self webViewActionWithHref:WEB_URL(@"/finance/new_welfare")];
+            [self webViewActionWithHref:@"/finance/new_welfare"];
         }
             break;
             
         case 1:{
-            [self webViewActionWithHref:@"http://192.168.50.14/mobile/finance/invitation"];
+            [self webViewActionWithHref:@"/finance/invitation"];
         }
             break;
             

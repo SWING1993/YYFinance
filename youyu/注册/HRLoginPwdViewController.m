@@ -166,7 +166,7 @@
     
     [self hideHUD];
     
-    NSMutableArray *userList = [[NSMutableArray alloc]initWithArray:SYSTEM_CONFIG.userList];
+    NSMutableArray *userList = [[NSMutableArray alloc]initWithArray:[SystemConfigDefaults sharedInstance].userList];
     
     for (int i = 0; i < userList.count; i++) {
         NSDictionary *temp = userList[i];
@@ -175,15 +175,10 @@
             [userList removeObject:temp];
         }
     }
+
+    [userList insertObject:@{@"name":username, @"pwd":@"", @"imgurl":value.str(@"app_litpic")} atIndex:0];
     
-//    if (self.btnRemember.isSelected) {
-//        [userList insertObject:@{@"name":username, @"pwd":password, @"imgurl":value.str(@"app_litpic")} atIndex:0];
-//    } else {
-        [userList insertObject:@{@"name":username, @"pwd":@"", @"imgurl":value.str(@"app_litpic")} atIndex:0];
-//    }
-    
-    SYSTEM_CONFIG.userList = userList;
-    
+    [SystemConfigDefaults sharedInstance].userList = userList;
     
     [[GVUserDefaults shareInstance]saveLocal];
     

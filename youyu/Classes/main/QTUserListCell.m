@@ -30,11 +30,11 @@
     self.lbName.text = obj.str(@"name");
 
     [self.btn click:^(id value) {
-        NSMutableArray *userlist = [[NSMutableArray alloc]initWithArray:SYSTEM_CONFIG.userList];
+        NSMutableArray *userlist = [[NSMutableArray alloc]initWithArray:[SystemConfigDefaults sharedInstance].userList];
 
         [userlist removeObject:obj];
 
-        SYSTEM_CONFIG.userList = userlist;
+        [SystemConfigDefaults sharedInstance].userList = userlist;
 
         NOTICE_POST(@"userlistreload");
     }];

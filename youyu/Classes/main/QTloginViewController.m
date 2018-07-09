@@ -122,7 +122,7 @@ static NSString  *loginStr = @"登录";
 
     [grid addView:self.image margin:UIEdgeInsetsMake(20, 0, 30, 0)];
 
-    if (SYSTEM_CONFIG.userList.count == 0) {
+    if ([SystemConfigDefaults sharedInstance].userList.count == 0) {
         self.tfPhone = [grid addRowInputWithplaceholder:@"请输入手机号码"];
     } else {
         self.tfPhone = [grid addRowInputWithplaceholder:@"请输入手机号码" Arrow:@"icon_login_drop" block:^(UIImageView *value) {
@@ -174,9 +174,9 @@ static NSString  *loginStr = @"登录";
         [self.navigationController pushViewController:controller animated:YES];
     }];
 
-    if (SYSTEM_CONFIG.userList.count > 0) {
-        self.tfPhone.text = SYSTEM_CONFIG.userList.firstObject[@"name"];
-        self.tfPwd.text = SYSTEM_CONFIG.userList.firstObject[@"pwd"];
+    if ([SystemConfigDefaults sharedInstance].userList.count > 0) {
+        self.tfPhone.text = [SystemConfigDefaults sharedInstance].userList.firstObject[@"name"];
+        self.tfPwd.text = [SystemConfigDefaults sharedInstance].userList.firstObject[@"pwd"];
     }
 
     [self.tfPhone setPhone];
@@ -186,7 +186,7 @@ static NSString  *loginStr = @"登录";
     self.tfPwd.group = 0;
 
     dropController = [QTUserListViewController controllerFromXib];
-    dropController.tableDataArray = SYSTEM_CONFIG.userList;
+    dropController.tableDataArray = [SystemConfigDefaults sharedInstance].userList;
     dropController.delegate = self;
     [self addChildViewController:dropController];
 
@@ -241,7 +241,7 @@ static NSString  *loginStr = @"登录";
 
     [self hideHUD];
 
-    NSMutableArray *userList = [[NSMutableArray alloc]initWithArray:SYSTEM_CONFIG.userList];
+    NSMutableArray *userList = [[NSMutableArray alloc]initWithArray:[SystemConfigDefaults sharedInstance].userList];
 
     for (int i = 0; i < userList.count; i++) {
         NSDictionary *temp = userList[i];
@@ -257,10 +257,9 @@ static NSString  *loginStr = @"登录";
         [userList insertObject:@{@"name":username, @"pwd":@"", @"imgurl":value.str(@"app_litpic")} atIndex:0];
     }
 
-    SYSTEM_CONFIG.userList = userList;
+    [SystemConfigDefaults sharedInstance].userList = userList;
 
-
-    [[GVUserDefaults shareInstance]saveLocal];
+    [[GVUserDefaults shareInstance] saveLocal];
 
     if (self.isLoginedToAccout) {
         self.navigationController.tabBarController.selectedIndex = MY_TAG;

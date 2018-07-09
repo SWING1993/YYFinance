@@ -75,7 +75,6 @@
 - (void)toHome {
     self.navigationController.tabBarController.selectedIndex = HOME_TAG;
     [self.navigationController popToRootViewControllerAnimated:YES];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"Logout" object:nil];
 }
 
 - (void)toInvest {
@@ -567,18 +566,14 @@
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"kLocalPassword"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    NSMutableArray *userlist = [[NSMutableArray alloc] initWithArray:SYSTEM_CONFIG.userList];
-    SYSTEM_CONFIG.userList = userlist;
-    [GVUserDefaults shareInstance].pswDes = @"";
-    [GVUserDefaults shareInstance].phone = @"";
+    NSMutableArray *userlist = [[NSMutableArray alloc] initWithArray:[SystemConfigDefaults sharedInstance].userList];
+    [SystemConfigDefaults sharedInstance].userList = userlist;
     [[GVUserDefaults shareInstance] saveLocal];
     [[GVUserDefaults shareInstance] clear];
     [self showToast:@"已安全退出" done:^{
         self.navigationController.tabBarController.selectedIndex = HOME_TAG;
         [self.navigationController popToRootViewControllerAnimated:YES];
     }];
-    //更改首页导航条右侧按钮
-    NOTICE_POST(@"Logout");
 }
 
 #pragma mark - 更多

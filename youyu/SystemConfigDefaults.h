@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#define SYSTEM_CONFIG [SystemConfigDefaults sharedInstance]
-
 @interface SystemConfigDefaults : NSObject
 
 + (instancetype)sharedInstance;
