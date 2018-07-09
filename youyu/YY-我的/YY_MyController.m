@@ -75,7 +75,7 @@
     [super setupNavigationItems];
     [self clearUp];
     // 用户名
-    self.nickLabel.text = [[GVUserDefaults shareInstance] getNickName];
+    self.nickLabel.text = [GVUserDefaults shareInstance].nick_name;
     self.headImage.layer.cornerRadius = 12.5;
     self.headImage.layer.masksToBounds = YES;
     // 头像

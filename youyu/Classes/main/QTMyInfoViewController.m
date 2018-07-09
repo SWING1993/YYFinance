@@ -230,7 +230,7 @@
             [self hideHUD];
             [GVUserDefaults  shareInstance].nick_name = self.tbNick_name.text;
             [GVUserDefaults  shareInstance].app_litpic = dic[@"img_url"];
-            [[GVUserDefaults  shareInstance] saveLocal];
+//            [[GVUserDefaults  shareInstance] saveLocal];
             [self showToast:@"保存成功"];
         }];
     }];

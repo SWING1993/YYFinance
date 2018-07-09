@@ -220,7 +220,6 @@
     }
     
     YTKKeyValueStore *store = [[YTKKeyValueStore alloc] initDBWithName:kAdConfigStore];
-    [store createTableWithName:kAdConfigTable];
     NSArray *adConfigurationMs = [YYAdConfigModel mj_objectArrayWithKeyValuesArray:[store getObjectById:kAdConfigKey fromTable:kAdConfigTable]];
     if (adConfigurationMs.count > 0) {
         // 顺序配置 上次的索引
@@ -412,13 +411,9 @@
 }
 
 - (void)autoLoginAction {
-    
-    if (![GVUserDefaults shareInstance].isLogin) {
-        return;
-    }
-    
-    NSString *username = [[NSUserDefaults standardUserDefaults] valueForKey:@"kLocalUserName"];
-    NSString *password = [[NSUserDefaults standardUserDefaults] valueForKey:@"kLocalPassword"];
+
+    NSString *username = [[NSUserDefaults standardUserDefaults] valueForKey:kStoreUserName];
+    NSString *password = [[NSUserDefaults standardUserDefaults] valueForKey:kStorePws];
 
     if (!kStringIsEmpty(username) && !kStringIsEmpty(password)) {
         
@@ -445,13 +440,7 @@
             NSDictionary *resultDict = (NSDictionary *)request.responseObject;
             if (resultDict.code == 100000) {
                 if (resultDict.content.allKeys > 0) {
-                    [[GVUserDefaults shareInstance] clear];
-                    [[GVUserDefaults shareInstance] mj_setKeyValues:resultDict.content];
-                    // 解密
-                    [GVUserDefaults  shareInstance].email = [[[GVUserDefaults  shareInstance].email stringValue] dnValue];
-                    [GVUserDefaults  shareInstance].card_id = [[[GVUserDefaults  shareInstance].card_id stringValue] dnValue];
-                    [GVUserDefaults  shareInstance].pswDes = password;
-                    [[GVUserDefaults shareInstance] saveLocal];
+                    [[GVUserDefaults shareInstance] saveDataWithJson:resultDict.content];
                 }
             }
         } failure:^(__kindof YTKBaseRequest * _Nonnull request) {

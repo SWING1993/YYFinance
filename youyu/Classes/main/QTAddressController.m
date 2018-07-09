@@ -209,7 +209,7 @@
 
         if (self.tableDataArray.count == 0) {
             [GVUserDefaults  shareInstance].address_exists = 0;
-            [[GVUserDefaults  shareInstance] saveLocal];
+//            [[GVUserDefaults  shareInstance] saveLocal];
         }
 
         [self.tableView deleteRowsAtIndexPaths:indexs withRowAnimation:UITableViewRowAnimationRight];

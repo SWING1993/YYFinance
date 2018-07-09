@@ -103,7 +103,7 @@
 
 - (void)commonJson {
     [service post:@"puser_home" data:nil complete:^(NSDictionary *value) {
-        [[GVUserDefaults  shareInstance] saveLocal];
+//        [[GVUserDefaults shareInstance] saveLocal];
 
         NSInteger level = [value.str(@"user_level") stringByReplacingOccurrencesOfString:@"V" withString:@""].integerValue;
 

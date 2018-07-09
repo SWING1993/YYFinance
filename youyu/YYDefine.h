@@ -14,6 +14,9 @@
 #define kHelpDeskUserName  [GVUserDefaults shareInstance].phone
 #define kHelpDeskPassword  @"password123456"
 
+#define kStoreUserName @"kUserName"
+#define kStorePws @"kPWS"
+
 // **************************************服务端******************************************
 #pragma mark -  服务端
 

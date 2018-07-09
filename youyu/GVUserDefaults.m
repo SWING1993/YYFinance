@@ -13,37 +13,39 @@
 #import "CoreArchive.h"
 #import "CoreLockConst.h"
 
+#define kUserStoreDB @"user.db"
+#define kUserStoreTable @"user_table"
+#define kUserStoreKey @"user_key"
+
+@interface GVUserDefaults ()
+
+@end
+
 static GVUserDefaults *sharedInstance = nil;
 @implementation GVUserDefaults
 
 - (instancetype)init {
     self = [super init];
     if (self) {
-        GVUserDefaults *temp = [NSKeyedUnarchiver unarchiveObjectWithFile:DATA_FILE_PATH];
-        if (temp.mj_keyValues) {
-            [self mj_setKeyValues:temp.mj_keyValues];
-        }
+
     }
     return self;
 }
 
 + (instancetype)shareInstance {
-    if (!sharedInstance) {
-        sharedInstance = [[GVUserDefaults alloc] init];
-    }
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        YTKKeyValueStore *store = [[YTKKeyValueStore alloc] initDBWithName:kUserStoreDB];
+        GVUserDefaults *user = [GVUserDefaults mj_objectWithKeyValues:[store getObjectById:kUserStoreKey fromTable:kUserStoreTable]];
+        if (!user) {
+            user = [[self alloc] init];
+        }
+        sharedInstance = user;
+    });
     return sharedInstance;
 }
 
-- (void)clear {
-    NSString *phone = self.phone;
-    NSString *pwd = self.pswDes;
-    NSFileManager *defaultManager = [NSFileManager defaultManager];
-    [defaultManager removeItemAtPath:DATA_FILE_PATH error:nil];
-    sharedInstance = [[GVUserDefaults alloc] init];
-    sharedInstance.phone = phone;
-    sharedInstance.pswDes = pwd;
-    [self saveLocal];
-}
+
 
 - (BOOL)isLogin {
     return !kStringIsEmpty(self.user_id);
@@ -57,13 +59,37 @@ static GVUserDefaults *sharedInstance = nil;
     }
 }
 
-- (NSString *)getNickName {
-    return kStringIsEmpty(self.nick_name) ? [self.phone phoneFormat] : [GVUserDefaults  shareInstance].nick_name;
+- (NSString *)email {
+    if (kStringIsEmpty(_email)) {
+        return @"";
+    }
+    return [_email dnValue];
 }
 
-MJCodingImplementation
-- (void)saveLocal {
-    [NSKeyedArchiver archiveRootObject:self toFile:DATA_FILE_PATH];
+- (NSString *)card_id {
+    if (kStringIsEmpty(_card_id)) {
+        return @"";
+    }
+    return [_card_id dnValue];
+}
+
+- (NSString *)nick_name {
+    if (kStringIsEmpty(_nick_name)) {
+        return [self.phone phoneFormat];
+    }
+    return _nick_name;
+}
+
+- (void)saveDataWithJson:(NSDictionary *)json {
+    [self mj_setKeyValues:json];
+    YTKKeyValueStore *store = [[YTKKeyValueStore alloc] initDBWithName:kUserStoreDB];
+    [store putObject:json withId:kUserStoreKey intoTable:kUserStoreTable];
+}
+
+- (void)clear {
+    sharedInstance = [[GVUserDefaults alloc] init];
+    YTKKeyValueStore *store = [[YTKKeyValueStore alloc] initDBWithName:kUserStoreDB];
+    [store deleteObjectById:kUserStoreKey fromTable:kUserStoreTable];
 }
 
 @end

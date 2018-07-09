@@ -59,7 +59,7 @@
     sortDic.delegate = self;
 
     //
-    self.lbName.text = [[GVUserDefaults shareInstance] getNickName];
+    self.lbName.text = [GVUserDefaults shareInstance].nick_name;
 
     //
     WEAKSELF;

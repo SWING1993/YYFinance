@@ -259,7 +259,7 @@ static NSString  *loginStr = @"登录";
 
     [SystemConfigDefaults sharedInstance].userList = userList;
 
-    [[GVUserDefaults shareInstance] saveLocal];
+//    [[GVUserDefaults shareInstance] saveLocal];
 
     if (self.isLoginedToAccout) {
         self.navigationController.tabBarController.selectedIndex = MY_TAG;

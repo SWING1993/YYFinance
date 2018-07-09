@@ -162,8 +162,6 @@
 
 - (void)loginHandel:(NSDictionary *)value {
     NSString    *username = self.phone;
-//    NSString    *password = self.tfPwd.text;
-    
     [self hideHUD];
     
     NSMutableArray *userList = [[NSMutableArray alloc]initWithArray:[SystemConfigDefaults sharedInstance].userList];
@@ -180,7 +178,7 @@
     
     [SystemConfigDefaults sharedInstance].userList = userList;
     
-    [[GVUserDefaults shareInstance]saveLocal];
+//    [[GVUserDefaults shareInstance]saveLocal];
     
     if (self.isLoginedToAccout) {
         self.navigationController.tabBarController.selectedIndex = MY_TAG;

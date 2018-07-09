@@ -92,23 +92,27 @@
 //    @"toInvestRecord",  // 投资记录
 //    @"toFriendPage",    // 邀请有礼
 //    @"toVipHome"        // vip
-    
+    @weakify(self)
     [self.investRecordBtn click:^(id value) {
-        [weakSelf performSelector:NSSelectorFromString(@"toInvestRecord")];
+        @strongify(self)
+        [self toInvestRecord];
     }];
     
     [self.capitalRecordBtn click:^(id value) {
-        [weakSelf performSelector:NSSelectorFromString(@"toDetail")];
+        @strongify(self)
+        [self toDetail];
     }];
     
     [self.helpBtn click:^(id value) {
+        @strongify(self)
         [AppUtil dial:@"400-888-1673"];
         self.helpBtn.enabled = NO;
         [self performSelector:@selector(changeButtonStatus) withObject:nil afterDelay:1.0f];//防止用户重复点击
     }];
     
     [self.calendarBtn click:^(id value) {
-        [weakSelf performSelector:NSSelectorFromString(@"toSignIn")];
+        @strongify(self)
+        [self toSignIn];
     }];
     
     [stack addLineForHeight:10 color:[UIColor colorHex:@"f0f0f0"]];
@@ -203,7 +207,7 @@
     [self clearUp];
  
     // 用户名
-    self.lbName.text = [[GVUserDefaults shareInstance] getNickName];
+    self.lbName.text = [GVUserDefaults shareInstance].nick_name;
     self.headImage.layer.cornerRadius = 10;
     self.headImage.layer.masksToBounds = YES;
     // 头像

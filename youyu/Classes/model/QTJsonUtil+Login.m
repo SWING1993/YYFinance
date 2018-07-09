@@ -37,19 +37,15 @@
     
     [self post:@"user_login" data:dic complete:^(NSDictionary *value) {
         
-        [[NSUserDefaults standardUserDefaults] setValue:para.str(@"user_name") forKey:@"kLocalUserName"];
-        [[NSUserDefaults standardUserDefaults] setValue:[para.str(@"password") desEncryptkey:deskey] forKey:@"kLocalPassword"];
+        [[NSUserDefaults standardUserDefaults] setValue:para.str(@"user_name") forKey:kStoreUserName];
+        [[NSUserDefaults standardUserDefaults] setValue:[para.str(@"password") desEncryptkey:deskey] forKey:kStorePws];
         [[NSUserDefaults standardUserDefaults] synchronize];
         [SystemConfigDefaults sharedInstance].firstOpenTime = [NSDate date];
         
         
         [[GVUserDefaults shareInstance] clear];
-        [[GVUserDefaults shareInstance] mj_setKeyValues:value];
-        // 解密
-        [GVUserDefaults  shareInstance].email = [[[GVUserDefaults  shareInstance].email stringValue] dnValue];
-        [GVUserDefaults  shareInstance].card_id = [[[GVUserDefaults  shareInstance].card_id stringValue] dnValue];
-        [GVUserDefaults  shareInstance].pswDes = dic[@"password"];
-        [[GVUserDefaults shareInstance] saveLocal];
+       
+        [[GVUserDefaults shareInstance] saveDataWithJson:value];
         
         HError *error = [[HChatClient sharedClient] registerWithUsername:kHelpDeskUserName password:kHelpDeskPassword];
         if (error) {

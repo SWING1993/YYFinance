@@ -13,11 +13,6 @@
 
 #pragma mark - 用户信息
 
-+ (instancetype)shareInstance;
-
-- (void)saveLocal;
-- (void)clear;
-
 /**
  *  标识用户是否登录
  */
@@ -26,27 +21,27 @@
 /**
  *  用户手机号码
  */
-@property (nonatomic, strong) NSString *phone;
+@property (nonatomic, copy) NSString *phone;
 
 /**
  *  访问access_id
  */
-@property (nonatomic, strong) NSString *access_id;
+@property (nonatomic, copy) NSString *access_id;
 
 /**
  *  访问access_key
  */
-@property (nonatomic, strong) NSString *access_key;
+@property (nonatomic, copy) NSString *access_key;
 
 /**
  *  用户身份证号
  */
-@property (nonatomic, strong) NSString *card_id;
+@property (nonatomic, copy) NSString *card_id;
 
 /**
  *  用户是否有收货地址(1.存在 2.不存在)
  */
-@property (nonatomic, strong) NSString *address_exists;
+@property (nonatomic, copy) NSString *address_exists;
 
 @property (nonatomic, assign) NSInteger is_lender;
 
@@ -58,7 +53,7 @@
 /**
  *  用户Id
  */
-@property (nonatomic, strong) NSString *user_id;
+@property (nonatomic, copy) NSString *user_id;
 
 /**
  *  支付密码状态(1.已设置)
@@ -70,34 +65,34 @@
 /**
  *  解密key
  */
-@property (nonatomic, strong) NSString *des_key;
+@property (nonatomic, copy) NSString *des_key;
 
 @property (nonatomic, assign) NSInteger logintime;
 
 /**
  *  用户真实姓名
  */
-@property (nonatomic, strong) NSString *realname;
+@property (nonatomic, copy) NSString *realname;
 
 /**
  *  用户邀请好友短链接
  */
-@property (nonatomic, strong) NSString *card_type;
+@property (nonatomic, copy) NSString *card_type;
 
 /**
  *  用户邮箱地址
  */
-@property (nonatomic, strong) NSString *email;
+@property (nonatomic, copy) NSString *email;
 
 /**
  *  用户邮箱地址状态  0 无邮箱  1 已绑定  2 未激活
  */
-@property (nonatomic, strong) NSString *email_status;
+@property (nonatomic, copy) NSString *email_status;
 
 /**
  *  用户昵称
  */
-@property (nonatomic, strong) NSString *nick_name;
+@property (nonatomic, copy) NSString *nick_name;
 
 /**
  *  实名认证状态
@@ -107,42 +102,42 @@
 /**
  *  用户名(手机号)
  */
-@property (nonatomic, strong) NSString *username;
+@property (nonatomic, copy) NSString *username;
 
 /**
  *  用户第一次投资时间  0 未投
  */
-@property (nonatomic, strong) NSString *first_tender_time;
+@property (nonatomic, copy) NSString *first_tender_time;
 
 /**
  *  头像URL
  */
-@property (nonatomic, strong) NSString *litpic;
+@property (nonatomic, copy) NSString *litpic;
 
 /**
  *  头像URL
  */
-@property (nonatomic, strong) NSString *app_litpic;
+@property (nonatomic, copy) NSString *app_litpic;
 
 /**
  *  是否签到(1已签到 2未签到)
  */
-@property (nonatomic, strong) NSString *insign_flg;
+@property (nonatomic, copy) NSString *insign_flg;
 
 /**
  *  是否签到(1已签到 2未签到)
  */
-@property (nonatomic, strong) NSString *insign_time;
+@property (nonatomic, copy) NSString *insign_time;
 
 /**
  *  经过DES加密的登录信息共享key
  */
-@property (nonatomic, strong) NSString *redis_key;
+@property (nonatomic, copy) NSString *redis_key;
 
 /**
  *  加密后的密码
  */
-@property (nonatomic, strong) NSString *pswDes;
+//@property (nonatomic, copy) NSString *pswDes;
 
 /**
  *  是否开通智慧投
@@ -159,8 +154,13 @@
  */
 @property (nonatomic, assign) BOOL isAgreeBook;
 
-- (BOOL)isSetPayPassword;
++ (instancetype)shareInstance;
+//- (instancetype)init NS_UNAVAILABLE;
+//+ (instancetype)new NS_UNAVAILABLE;
 
-- (NSString *)getNickName;
+- (void)saveDataWithJson:(NSDictionary *)json;
+- (void)clear;
+
+- (BOOL)isSetPayPassword;
 
 @end

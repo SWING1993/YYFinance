@@ -53,9 +53,11 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.lbNAME.text = [[GVUserDefaults shareInstance] getNickName];
+    self.lbNAME.text = [GVUserDefaults shareInstance].nick_name;
     [self.imgUser sd_setImageWithURL:[NSURL URLWithString:[GVUserDefaults  shareInstance].app_litpic] placeholderImage:[UIImage imageNamed:@"icon_account_user"]];
+    @weakify(self)
     [self.headview addTapGesture:^{
+        @strongify(self)
         [self toMyInfo];
     }];
 } 

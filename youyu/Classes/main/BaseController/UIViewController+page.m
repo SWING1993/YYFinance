@@ -531,8 +531,6 @@
 }
 
 - (void)loginToAccount {
-    [GVUserDefaults  shareInstance].pswDes = @"";
-    [[GVUserDefaults  shareInstance] saveLocal];
     [self login:^(QTloginViewController *controller) {
         controller.isLoginedToAccout = YES;
         controller.isBackHome = YES;
@@ -550,8 +548,7 @@
 
 // 重新登陆 删除密码
 - (void)relogin {
-    [GVUserDefaults  shareInstance].pswDes = @"";
-    [[GVUserDefaults  shareInstance] saveLocal];
+    [[GVUserDefaults shareInstance] clear];
     [self login:^(QTloginViewController *controller) {
         controller.isBackToSecondPage = YES;
         controller.isLoginedToAccout = NO;
@@ -562,13 +559,12 @@
 // 安全退出
 - (void)logout {
 
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"kLocalUserName"];
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"kLocalPassword"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kStoreUserName];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kStorePws];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     NSMutableArray *userlist = [[NSMutableArray alloc] initWithArray:[SystemConfigDefaults sharedInstance].userList];
     [SystemConfigDefaults sharedInstance].userList = userlist;
-    [[GVUserDefaults shareInstance] saveLocal];
     [[GVUserDefaults shareInstance] clear];
     [self showToast:@"已安全退出" done:^{
         self.navigationController.tabBarController.selectedIndex = HOME_TAG;
@@ -612,7 +608,7 @@
 //}
 
 //慧员问答
-- (void)toQA{
+- (void)toQA {
     QTWebViewController *controller = [QTWebViewController controllerFromXib];
     controller.url = WEB_URL(@"/article/article_faq");
     [self.navigationController pushViewController:controller animated:YES];
