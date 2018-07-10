@@ -559,9 +559,7 @@
 // 安全退出
 - (void)logout {
 
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kStoreUserName];
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kStorePws];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [[SystemConfigDefaults sharedInstance] removeUserNameAndPsw];
     
     NSMutableArray *userlist = [[NSMutableArray alloc] initWithArray:[SystemConfigDefaults sharedInstance].userList];
     [SystemConfigDefaults sharedInstance].userList = userlist;

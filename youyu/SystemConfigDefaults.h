@@ -32,4 +32,12 @@
  */
 @property (nonatomic, strong) NSArray *userList;
 
+- (void)saveUserName:(NSString *)userName password:(NSString *)password;
+
+- (void)removeUserNameAndPsw;
+
+- (NSString *)getUserName;
+
+- (NSString *)getPsw;
+
 @end

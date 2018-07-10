@@ -16,7 +16,7 @@
     static dispatch_once_t onceToken;
 
     dispatch_once(&onceToken, ^{
-        instance = [SystemConfigDefaults new];
+        instance = [[self alloc] init];
     });
 
     return instance;
@@ -58,6 +58,25 @@
 
 - (void)setUserList:(NSArray *)userList {
     [[NSUserDefaults  standardUserDefaults] setObject:userList forKey:@"userList"];
+}
+
+- (void)saveUserName:(NSString *)userName password:(NSString *)password {
+    [[NSUserDefaults standardUserDefaults] setObject:userName forKey:@"username"];
+    [[NSUserDefaults standardUserDefaults] setObject:password forKey:@"userpws"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)removeUserNameAndPsw {
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"username"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"userpws"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+- (NSString *)getUserName {
+    return [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
+}
+
+- (NSString *)getPsw {
+    return [[NSUserDefaults standardUserDefaults] objectForKey:@"userpws"];
 }
 
 @end

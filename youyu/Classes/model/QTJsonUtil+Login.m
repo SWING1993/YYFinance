@@ -37,11 +37,9 @@
     
     [self post:@"user_login" data:dic complete:^(NSDictionary *value) {
         
-        [[NSUserDefaults standardUserDefaults] setValue:para.str(@"user_name") forKey:kStoreUserName];
-        [[NSUserDefaults standardUserDefaults] setValue:[para.str(@"password") desEncryptkey:deskey] forKey:kStorePws];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        [SystemConfigDefaults sharedInstance].firstOpenTime = [NSDate date];
         
+        [[SystemConfigDefaults sharedInstance] saveUserName:dic[@"user_name"] password:dic[@"password"]];
+        [SystemConfigDefaults sharedInstance].firstOpenTime = [NSDate date];
         
         [[GVUserDefaults shareInstance] clear];
        

@@ -412,8 +412,8 @@
 
 - (void)autoLoginAction {
 
-    NSString *username = [[NSUserDefaults standardUserDefaults] valueForKey:kStoreUserName];
-    NSString *password = [[NSUserDefaults standardUserDefaults] valueForKey:kStorePws];
+    NSString *username = [[SystemConfigDefaults sharedInstance] getUserName];
+    NSString *password = [[SystemConfigDefaults sharedInstance] getPsw];
 
     if (!kStringIsEmpty(username) && !kStringIsEmpty(password)) {
         
@@ -433,6 +433,7 @@
         dic[@"client_udid"] = [AppUtil getOpenUDID];
         dic[@"login_area"] = [IPHelper deviceIPAdress];
         dic[@"client_time"] = @(@([NSDate systemDate].timeIntervalSince1970).integerValue);
+        
         [[GVUserDefaults shareInstance] clear];
 
         YYRequestApi *api = [[YYRequestApi alloc] initWithPostTaskUrl:@"user_login" requestArgument:dic];

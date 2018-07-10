@@ -97,7 +97,6 @@
     [self showHUD:@"正在提交..."];
     [service post:@"user_uppwd" data:dic complete:^(NSDictionary *value) {
         [self hideHUD];
-        [[NSUserDefaults standardUserDefaults] setValue:self.tfPwd.text forKey:kStorePws];
         [self showToast:@"修改密码成功" done:^{
             [self relogin];
         }];
