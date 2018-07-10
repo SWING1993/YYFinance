@@ -11,10 +11,10 @@
 #import <XHLaunchAd/XHLaunchAd.h>
 #import "QMUIConfigurationTemplate.h"
 //table && key
-#define kAdConfigStore @"AdConfig.db"
-#define kAdConfigTable @"AdConfig_table"
-#define kAdConfigKey @"AdConfigKey"
-#define kAdConfigIndex @"kAdConfigIndex"
+#define kAdConfigStore @"adconfig.db"
+#define kAdConfigTable @"adconfig_table"
+#define kAdConfigKey @"adconfig_key"
+#define kAdConfigIndex @"adconfig_index"
 
 @interface YYAdConfigModel : NSObject
 @property (nonatomic, copy) NSString *url;
