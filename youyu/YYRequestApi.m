@@ -13,8 +13,6 @@
     NSURLRequest * _request;
 }
 
-static NSURLSession *urlSession;
-
 - (id)initWithPostTaskUrl:(NSString *)url requestArgument:(NSDictionary *)argument {
     self = [super init];
     if (self) {
@@ -24,7 +22,7 @@ static NSURLSession *urlSession;
 }
 
 - (NSURLRequest *)getRequestWithrequestUrl:(NSString *)url requestArgument:(NSDictionary *)argument {
-//    NSString *serverURL = [[NSString stringWithFormat:@"%@", SERVER_URL] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+
     NSString *serverURL = [NSString stringWithFormat: @"%@/http/HttpService",[YTKNetworkConfig sharedConfig].baseUrl];
     NSMutableDictionary *argumentDict = [NSMutableDictionary dictionaryWithDictionary:argument];
     argumentDict[@"accessid"] = [GVUserDefaults shareInstance].isLogin ? [GVUserDefaults shareInstance].access_id : ACCESS_ID;
