@@ -31,6 +31,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    // Hello World
+    
     QTJsonUtil *service = [[QTJsonUtil alloc]init];
     //获取用户的广告标示符
     [service sendIDFAToServer];
